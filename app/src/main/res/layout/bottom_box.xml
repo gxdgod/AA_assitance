@@ -5,6 +5,7 @@
     android:layout_alignParentBottom="true"   >
 
     <RelativeLayout
+        android:id="@+id/layBottomBar"
         android:layout_width="fill_parent"
         android:layout_height="68dp"
         android:background="@drawable/bottom_bg">
@@ -35,5 +36,16 @@
             android:layout_centerVertical="true"   />
 
     </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layBottomListViewBox"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/layBottomBar">
+
+        <ListView
+            android:id="@+id/lvSlideList" style="@style/StyleListView"   />
+
+    </LinearLayout>
 
 </RelativeLayout>

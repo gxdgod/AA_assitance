@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Godutch.iml" filepath="$PROJECT_DIR$/Godutch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AA_assitance.iml" filepath="$PROJECT_DIR$/AA_assitance.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
