@@ -72,10 +72,15 @@ public class SlideMenuView {
 
         layBottomBox.setLayoutParams(_LayoutParam);
         mIsClosed = true;
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     }
 
     private  void Toggle()
     {
+<<<<<<< HEAD
         if (mIsClosed)
         {
             Open();
@@ -88,6 +93,15 @@ public class SlideMenuView {
     private  void Add(SliderMenuItem pSliderMenuItem)
     {
         mMenuList.add(pSliderMenuItem);
+=======
+
+
+    }
+
+    private  void add()
+    {
+
+>>>>>>> origin/master
 
     }
 
