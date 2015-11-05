@@ -1,14 +1,25 @@
 package mobidever.godutch.controls;
 
-import android.app.Activity;
-import android.view.View;
-import android.widget.RelativeLayout;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
 import mobidever.godutch.activity.R;
 import mobidever.godutch.adapter.AdapterAppGrid;
+import mobidever.godutch.adapter.AdapterSliderMenu;
+
+import android.app.Activity;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+
+import android.widget.GridView;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.RelativeLayout.LayoutParams;
+
 
 /**
  * Created by leon on 15-11-3.
@@ -33,13 +44,6 @@ public class SlideMenuView {
        layBottomBox.setOnClickListener(new OnSlideMenuClick());
     }
 
-    private class OnSlideMenuClick implements View.OnClickListener
-    {
-        @Override
-        public void onClick(View v) {
-
-        }
-    }
 
     public void InitVariable()
     {
@@ -72,15 +76,11 @@ public class SlideMenuView {
 
         layBottomBox.setLayoutParams(_LayoutParam);
         mIsClosed = true;
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
     }
 
     private  void Toggle()
     {
-<<<<<<< HEAD
+
         if (mIsClosed)
         {
             Open();
@@ -93,25 +93,37 @@ public class SlideMenuView {
     private  void Add(SliderMenuItem pSliderMenuItem)
     {
         mMenuList.add(pSliderMenuItem);
-=======
-
-
     }
 
-    private  void add()
-    {
 
->>>>>>> origin/master
-
-    }
 
     private void BindList ()
     {
+        AdapterSliderMenu _AdapterSlideMenu = new AdapterSliderMenu(mActivity, mMenuList);
+        ListView _ListView = (ListView) mActivity.findViewById(R.id.lvSlideList);
+        _ListView.setAdapter(_AdapterSlideMenu);
+
+        _ListView.setOnItemClickListener(new OnSlideMenuItemCLick());
 
     }
 
-    private void OnSlideMenuClick()
+
+    private class OnSlideMenuClick implements OnClickListener
+    {
+        @Override
+        public void onClick(View v) {
+            Toggle();;
+        }
+    }
+
+
+    private class OnSlideMenuItemCLick implements OnItemClickListener
     {
 
+
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+        }
     }
 }

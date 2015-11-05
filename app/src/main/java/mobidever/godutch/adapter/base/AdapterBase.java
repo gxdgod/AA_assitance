@@ -13,6 +13,10 @@ import java.util.List;
  */
 public abstract  class AdapterBase extends BaseAdapter {
 
+    public List GetList() {
+        return mList;
+    }
+
     public List mList;
 
     public Context GetContext() {

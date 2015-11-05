@@ -14,6 +14,7 @@ import java.util.List;
 
 import mobidever.godutch.activity.R;
 import mobidever.godutch.adapter.base.AdapterBase;
+import mobidever.godutch.controls.SliderMenuItem;
 
 /**
  * Created by leon on 15-10-29.
@@ -22,17 +23,12 @@ public class AdapterSliderMenu extends AdapterBase {
 
     private class Holder
     {
-        ImageView ivIcon;
-        TextView  tvName;
+        TextView  tvMenuName;
     }
-
 
     public AdapterSliderMenu(Context pContext, List pList) {
         super(pContext, pList);
     }
-
-
-
 
     private Context  mContext;
 
@@ -41,24 +37,21 @@ public class AdapterSliderMenu extends AdapterBase {
         Holder _Holder;
         if (convertView == null)
         {
-            LayoutInflater _LayoutInflater = LayoutInflater.from(mContext);
-            convertView = _LayoutInflater.inflate(R.layout.main_body_item, null);
+
+            convertView = GetLayeroutInflater().inflate(R.layout.slidemenu_list_item,null);
 
             _Holder = new Holder();
-            _Holder.ivIcon = (ImageView) convertView.findViewById(R.id.ivIcon);
-            _Holder.tvName = (TextView)  convertView.findViewById(R.id.tvName);
+
+            _Holder.tvMenuName = (TextView)  convertView.findViewById(R.id.ivMenuName);
             convertView.setTag(_Holder);
         }else{
             _Holder = (Holder)convertView.getTag();
         }
 
-       // _Holder.ivIcon.setImageResource(mImageInteger[position]);
-        LinearLayout.LayoutParams _LayoutParams = new LinearLayout.LayoutParams(50,50);
-        _Holder.ivIcon.setLayoutParams(_LayoutParams);
-        _Holder.ivIcon.setScaleType(ImageView.ScaleType.FIT_XY);
-        
+        SliderMenuItem _Item = (SliderMenuItem) GetList().get(position);
 
-        //_Holder.tvName.setText(mImageString[position]);
+
+        _Holder.tvMenuName.setText(_Item.getTitle());
 
         return convertView;
     }
