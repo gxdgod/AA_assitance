@@ -27,7 +27,13 @@ public class SlideMenuView {
     private  List mMenuList;
     private  boolean mIsClosed;
     private RelativeLayout  layBottomBox;
-    //private OnSlideMenuListener mSlideMenuListener;
+    private OnSlideMenuListener mSlideMenuListener;
+
+    public interface OnSlideMenuListener
+    {
+        public abstract void onSlideMenuItemClick(View pView, SlideMenuItem pSlideMenuItem);
+    }
+
 
     public  SlideMenuView(Activity pActivity)
     {
@@ -35,7 +41,6 @@ public class SlideMenuView {
         InitVariable();
         InitView();
         InitListeners();
-
     }
 
     private void InitListeners() {
@@ -51,7 +56,6 @@ public class SlideMenuView {
 
     public void InitView(){
         layBottomBox = (RelativeLayout) mActivity.findViewById(R.id.IncludeBottom);
-        
     }
 
 
@@ -121,7 +125,7 @@ public class SlideMenuView {
         public void onItemClick(AdapterView<?> pAdapterView, View pView, int pPosition,
                                 long arg3) {
             SlideMenuItem _SlideMenuItem = (SlideMenuItem) pAdapterView.getItemAtPosition(pPosition);
-        //    mSlideMenuListener.onSlideMenuItemClick(pView, _SlideMenuItem);
+            mSlideMenuListener.onSlideMenuItemClick(pView, _SlideMenuItem);
         }
     }
 }
