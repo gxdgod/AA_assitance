@@ -1,32 +1,26 @@
-package mobidever.godutch.adapter;
+package mobidever.godutch.adapter.base;
 
 import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
 
 import mobidever.godutch.activity.R;
-import mobidever.godutch.adapter.base.AdapterBase;
-import mobidever.godutch.controls.SliderMenuItem;
+import mobidever.godutch.controls.SlideMenuItem;
 
 /**
  * Created by leon on 15-10-29.
  */
-public class AdapterSliderMenu extends AdapterBase {
+public class AdapterSlideMenu extends AdapterBase {
 
     private class Holder
     {
         TextView  tvMenuName;
     }
 
-    public AdapterSliderMenu(Context pContext, List pList) {
+    public AdapterSlideMenu(Context pContext, List pList) {
         super(pContext, pList);
     }
 
@@ -48,7 +42,7 @@ public class AdapterSliderMenu extends AdapterBase {
             _Holder = (Holder)convertView.getTag();
         }
 
-        SliderMenuItem _Item = (SliderMenuItem) GetList().get(position);
+        SlideMenuItem _Item = (SlideMenuItem) GetList().get(position);
 
 
         _Holder.tvMenuName.setText(_Item.getTitle());

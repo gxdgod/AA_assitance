@@ -24,6 +24,7 @@ public class ActivityMain extends ActivityFrame {
         InitView();
         InitListeners();
         BindData();
+        CreateSlideMenu(R.array.SlideMenuActivityMain);
     }
 
     public void InitVariable()

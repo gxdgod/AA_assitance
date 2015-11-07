@@ -6,8 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mobidever.godutch.activity.R;
-import mobidever.godutch.adapter.AdapterAppGrid;
-import mobidever.godutch.adapter.AdapterSliderMenu;
+import mobidever.godutch.adapter.AdapterSlideMenu;
 
 import android.app.Activity;
 import android.view.View;
@@ -15,10 +14,8 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 
-import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.RelativeLayout.LayoutParams;
 
 
 /**
@@ -30,6 +27,7 @@ public class SlideMenuView {
     private  List mMenuList;
     private  boolean mIsClosed;
     private RelativeLayout  layBottomBox;
+    //private OnSlideMenuListener mSlideMenuListener;
 
     public  SlideMenuView(Activity pActivity)
     {
@@ -72,7 +70,7 @@ public class SlideMenuView {
     {
         RelativeLayout.LayoutParams _LayoutParam = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.FILL_PARENT,68 );
-        _LayoutParam.addRule(RelativeLayout.BELOW,R.id.IncludeTitle);
+        _LayoutParam.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
 
         layBottomBox.setLayoutParams(_LayoutParam);
         mIsClosed = true;
@@ -90,16 +88,16 @@ public class SlideMenuView {
 
     }
 
-    private  void Add(SliderMenuItem pSliderMenuItem)
+    public void Add(SlideMenuItem pSliderMenuItem)
     {
         mMenuList.add(pSliderMenuItem);
     }
 
 
 
-    private void BindList ()
+    public void BindList()
     {
-        AdapterSliderMenu _AdapterSlideMenu = new AdapterSliderMenu(mActivity, mMenuList);
+        AdapterSlideMenu _AdapterSlideMenu = new AdapterSlideMenu(mActivity, mMenuList);
         ListView _ListView = (ListView) mActivity.findViewById(R.id.lvSlideList);
         _ListView.setAdapter(_AdapterSlideMenu);
 
@@ -119,11 +117,11 @@ public class SlideMenuView {
 
     private class OnSlideMenuItemCLick implements OnItemClickListener
     {
-
-
         @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+        public void onItemClick(AdapterView<?> pAdapterView, View pView, int pPosition,
+                                long arg3) {
+            SlideMenuItem _SlideMenuItem = (SlideMenuItem) pAdapterView.getItemAtPosition(pPosition);
+        //    mSlideMenuListener.onSlideMenuItemClick(pView, _SlideMenuItem);
         }
     }
 }
