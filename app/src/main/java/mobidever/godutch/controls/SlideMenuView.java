@@ -38,6 +38,7 @@ public class SlideMenuView {
     public  SlideMenuView(Activity pActivity)
     {
         mActivity = pActivity;
+        mSlideMenuListener=(OnSlideMenuListener)pActivity;
         InitVariable();
         InitView();
         InitListeners();
