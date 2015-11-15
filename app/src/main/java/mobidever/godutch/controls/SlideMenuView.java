@@ -9,6 +9,7 @@ import mobidever.godutch.activity.R;
 import mobidever.godutch.adapter.AdapterSlideMenu;
 
 import android.app.Activity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -45,7 +46,19 @@ public class SlideMenuView {
     }
 
     private void InitListeners() {
-       layBottomBox.setOnClickListener(new OnSlideMenuClick());
+
+        layBottomBox.setOnClickListener(new OnSlideMenuClick());
+        layBottomBox.setFocusableInTouchMode(true);
+
+        layBottomBox.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_MENU && event.getAction() == KeyEvent.ACTION_UP){
+                    Toggle();
+                }
+                return false;
+            }
+        });
     }
 
 

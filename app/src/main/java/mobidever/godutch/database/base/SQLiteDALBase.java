@@ -6,6 +6,7 @@ package mobidever.godutch.database.base;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import mobidever.godutch.database.base.SQLiteHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.List;
 
 //public abstract class SQLiteDALBase implements SQLiteDataTable {
 
-    public abstract class SQLiteDALBase  {
+    public abstract class SQLiteDALBase implements SQLiteHelper.SQLiteDataTable {
 
     private Context m_Context;
     private SQLiteDatabase m_DataBase;

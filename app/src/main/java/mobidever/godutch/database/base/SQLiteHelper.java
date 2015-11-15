@@ -15,6 +15,13 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     private  Context mContext;
     private static  SQLiteHelper INSTANCE;
 
+    public interface SQLiteDataTable
+    {
+        public void OnCreate(SQLiteDatabase pDataBase);
+        public void OnUpgrade(SQLiteDatabase pDataBase);
+
+
+    }
     public  SQLiteHelper(Context pContext)
     {
         super(pContext,mSQLiteDateBaseConfig.GetDataBaseName(),null,mSQLiteDateBaseConfig.GetVersion());
