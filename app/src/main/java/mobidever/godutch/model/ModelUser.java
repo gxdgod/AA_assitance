@@ -6,7 +6,7 @@ import java.util.Date;
  * Created by leon on 15-11-14.
  */
 public class ModelUser {
-    public int getM_UserID() {
+    public int getUserID() {
         return m_UserID;
     }
 
@@ -43,4 +43,6 @@ public class ModelUser {
     private Date mCreateDate= new Date();
     //o disable 1 enable
     private  int mStatus;
+
+
 }

@@ -5,8 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.Date;
 import java.util.List;
 
+import mobidever.godutch.activity.R;
 import mobidever.godutch.utility.DateTools;
 
 import mobidever.godutch.database.base.SQLiteDALBase;
@@ -17,7 +19,6 @@ import mobidever.godutch.model.ModelUser;
  */
 public class SQLiteDALUser extends SQLiteDALBase {
     public SQLiteDALUser(Context p_Context) {
-
 
         super(p_Context);
     }
@@ -56,8 +57,30 @@ public class SQLiteDALUser extends SQLiteDALBase {
     }
 
     @Override
-    protected Object FindModel(Cursor p_Cursor) {
-        return null;
+    protected Object FindModel(Cursor pCursor) {
+
+        ModelUser _ModelUser = new ModelUser();
+        _ModelUser.setUserID(pCursor.getInt(pCursor.getColumnIndex("UserID")));
+        _ModelUser.setUserName(pCursor.getString(pCursor.getColumnIndex("UserName")));
+        Date _CreateDate = DateTools.getDate(pCursor.getString(pCursor.getColumnIndex("CreateDate")), "yyyy-MM-dd HH:mm:ss");
+        _ModelUser.setCreateDate(_CreateDate);
+        _ModelUser.setStatus((pCursor.getInt(pCursor.getColumnIndex("State"))));
+
+        return _ModelUser;
+
+    }
+
+    private void InitDefaultDate(SQLiteDatabase pDatabase)
+    {
+          ModelUser _ModelUser = new ModelUser();
+          String[] _UserName = GetContext().getResources().getStringArray(R.array.InitDefaultUserName);
+        for (int i = 0; i < _UserName.length;i++)
+        {
+            _ModelUser.setUserName(_UserName[i]);
+            ContentValues _ContentValues = CreateParms(_ModelUser);
+            pDatabase.insert(GetTableNameAndPK()[0],null,_ContentValues);
+        }
+
     }
 
     @Override
@@ -73,6 +96,7 @@ public class SQLiteDALUser extends SQLiteDALBase {
         s_CreateTableScript.append("				)");
 
         pDataBase.execSQL(s_CreateTableScript.toString());
+        InitDefaultDate(pDataBase);
 
     }
 

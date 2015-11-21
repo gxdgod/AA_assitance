@@ -1,14 +1,14 @@
-/*
- * @(#) ËùÓÐ°æÈ¨¹é¾ÛÁé¹¤×÷ÊÒËùÓÐ.
- * 
- * $Id$
- * 
- * ===================================
- * Electric Operation Maintenance System(EOMS)
- * 
- * Copyright (c) 2006 by INSPUR LG, Inc.
- * All rights reserved.
- */
+//
+//* @(#) ï¿½ï¿½ï¿½Ð°ï¿½È¨ï¿½ï¿½ï¿½ï¿½é¹¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+//*
+//* $Id$
+//*
+//* ===================================
+//* Electric Operation Maintenance System(EOMS)
+//*
+//* Copyright (c) 2006 by INSPUR LG, Inc.
+//* All rights reserved.
+//
 package mobidever.godutch.utility;
 
 import java.io.Serializable;
@@ -21,133 +21,133 @@ import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
 /**
- * ÈÕÆÚ²Ù×÷¹¤¾ßÀà£¬Ö÷ÒªÊµÏÖÁËÈÕÆÚµÄ³£ÓÃ²Ù×÷¡£
+ * ï¿½ï¿½ï¿½Ú²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½à£¬ï¿½ï¿½ÒªÊµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÚµÄ³ï¿½ï¿½Ã²ï¿½ï¿½ï¿½ï¿½ï¿½
  * <p>
- * ÔÚ¹¤¾ßÀàÖÐ¾­³£Ê¹ÓÃµ½¹¤¾ßÀàµÄ¸ñÊ½»¯ÃèÊö£¬Õâ¸öÖ÷ÒªÊÇÒ»¸öÈÕÆÚµÄ²Ù×÷Àà£¬ËùÒÔÈÕÖ¾¸ñÊ½Ö÷ÒªÊ¹ÓÃ SimpleDateFormatµÄ¶¨Òå¸ñÊ½.
+ * ï¿½Ú¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¾ï¿½ï¿½ï¿½Ê¹ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ÚµÄ²ï¿½ï¿½ï¿½ï¿½à£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾ï¿½ï¿½Ê½ï¿½ï¿½ÒªÊ¹ï¿½ï¿½ SimpleDateFormatï¿½Ä¶ï¿½ï¿½ï¿½ï¿½Ê½.
  * <p>
- * ¸ñÊ½µÄÒâÒåÈçÏÂ£º ÈÕÆÚºÍÊ±¼äÄ£Ê½ <br>
- * ÈÕÆÚºÍÊ±¼ä¸ñÊ½ÓÉÈÕÆÚºÍÊ±¼äÄ£Ê½×Ö·û´®Ö¸¶¨¡£ÔÚÈÕÆÚºÍÊ±¼äÄ£Ê½×Ö·û´®ÖÐ£¬Î´¼ÓÒýºÅµÄ×ÖÄ¸ 'A' µ½ 'Z' ºÍ 'a' µ½ 'z'
- * ±»½âÊÍÎªÄ£Ê½×ÖÄ¸£¬ÓÃÀ´±íÊ¾ÈÕÆÚ»òÊ±¼ä×Ö·û´®ÔªËØ¡£ÎÄ±¾¿ÉÒÔÊ¹ÓÃµ¥ÒýºÅ (') ÒýÆðÀ´£¬ÒÔÃâ½øÐÐ½âÊÍ¡£"''"
- * ±íÊ¾µ¥ÒýºÅ¡£ËùÓÐÆäËû×Ö·û¾ù²»½âÊÍ£»Ö»ÊÇÔÚ¸ñÊ½»¯Ê±½«ËüÃÇ¼òµ¥¸´ÖÆµ½Êä³ö×Ö·û´®£¬»òÕßÔÚ·ÖÎöÊ±ÓëÊäÈë×Ö·û´®½øÐÐÆ¥Åä¡£
+ * ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â£ï¿½ ï¿½ï¿½ï¿½Úºï¿½Ê±ï¿½ï¿½Ä£Ê½ <br>
+ * ï¿½ï¿½ï¿½Úºï¿½Ê±ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½Úºï¿½Ê±ï¿½ï¿½Ä£Ê½ï¿½Ö·ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úºï¿½Ê±ï¿½ï¿½Ä£Ê½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Ð£ï¿½Î´ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½Ä¸ 'A' ï¿½ï¿½ 'Z' ï¿½ï¿½ 'a' ï¿½ï¿½ 'z'
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎªÄ£Ê½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ú»ï¿½Ê±ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½Ôªï¿½Ø¡ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ (') ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð½ï¿½ï¿½Í¡ï¿½"''"
+ * ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½Å¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í£ï¿½Ö»ï¿½ï¿½ï¿½Ú¸ï¿½Ê½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ç¼òµ¥¸ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¥ï¿½ä¡£
  * <p>
- * ¶¨ÒåÁËÒÔÏÂÄ£Ê½×ÖÄ¸£¨ËùÓÐÆäËû×Ö·û 'A' µ½ 'Z' ºÍ 'a' µ½ 'z' ¶¼±»±£Áô£©£º <br>
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ 'A' ï¿½ï¿½ 'Z' ï¿½ï¿½ 'a' ï¿½ï¿½ 'z' ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ <br>
  * <table>
  * <tr>
- * <td>×ÖÄ¸</td>
- * <td>ÈÕÆÚ»òÊ±¼äÔªËØ</td>
- * <td>±íÊ¾</td>
- * <td>Ê¾Àý</td>
+ * <td>ï¿½ï¿½Ä¸</td>
+ * <td>ï¿½ï¿½ï¿½Ú»ï¿½Ê±ï¿½ï¿½Ôªï¿½ï¿½</td>
+ * <td>ï¿½ï¿½Ê¾</td>
+ * <td>Ê¾ï¿½ï¿½</td>
  * <td></tr>
  * <tr>
  * <td>G</td>
  * <td>Era</td>
- * <td>±êÖ¾·û</td>
+ * <td>ï¿½ï¿½Ö¾ï¿½ï¿½</td>
  * <td>Text</td>
  * <td>AD</td>
  * <td></tr>
  * <tr>
  * <td>y</td>
- * <td>Äê</td>
+ * <td>ï¿½ï¿½</td>
  * <td>Year</td>
  * <td>1996;</td>
  * <td>96</td>
  * <td></tr>
  * <tr>
  * <td>M</td>
- * <td>ÄêÖÐµÄÔÂ·Ý</td>
+ * <td>ï¿½ï¿½ï¿½Ðµï¿½ï¿½Â·ï¿½</td>
  * <td>Month</td>
  * <td>July;</td>
  * <td>Jul;</td>
  * <td>07</tr>
  * <tr>
  * <td>w</td>
- * <td>ÄêÖÐµÄÖÜÊý</td>
+ * <td>ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½</td>
  * <td>Number</td>
  * <td>27</td>
  * <td></tr>
  * <tr>
  * <td>W</td>
- * <td>ÔÂ·ÝÖÐµÄÖÜÊý</td>
+ * <td>ï¿½Â·ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½</td>
  * <td>Number</td>
  * <td>2</td>
  * <td></tr>
  * <tr>
  * <td>D</td>
- * <td>ÄêÖÐµÄÌìÊý</td>
+ * <td>ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½</td>
  * <td>Number</td>
  * <td>189</td>
  * <td></tr>
  * <tr>
  * <td>d</td>
- * <td>ÔÂ·ÝÖÐµÄÌìÊý</td>
+ * <td>ï¿½Â·ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½</td>
  * <td>Number</td>
  * <td>10</td>
  * <td></tr>
  * <tr>
  * <td>F</td>
- * <td>ÔÂ·ÝÖÐµÄÐÇÆÚ</td>
+ * <td>ï¿½Â·ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½</td>
  * <td>Number</td>
  * <td>2</td>
  * <td></tr>
  * <tr>
  * <td>E</td>
- * <td>ÐÇÆÚÖÐµÄÌìÊý</td>
+ * <td>ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½</td>
  * <td>Text</td>
  * <td>Tuesday;</td>
  * <td>Tue</tr>
  * <tr>
  * <td>a</td>
  * <td>Am/pm</td>
- * <td>±ê¼Ç</td>
+ * <td>ï¿½ï¿½ï¿½</td>
  * <td>Text</td>
  * <td>PM</td>
  * <td></tr>
  * <tr>
  * <td>H</td>
- * <td>Ò»ÌìÖÐµÄÐ¡Ê±Êý£¨0-23£©</td>
+ * <td>Ò»ï¿½ï¿½ï¿½Ðµï¿½Ð¡Ê±ï¿½ï¿½ï¿½ï¿½0-23ï¿½ï¿½</td>
  * <td>Number</td>
  * <td>0</tr>
  * <tr>
  * <td>k</td>
- * <td>Ò»ÌìÖÐµÄÐ¡Ê±Êý£¨1-24£©</td>
+ * <td>Ò»ï¿½ï¿½ï¿½Ðµï¿½Ð¡Ê±ï¿½ï¿½ï¿½ï¿½1-24ï¿½ï¿½</td>
  * <td>Number</td>
  * <td>24</td>
  * <td></tr>
  * <tr>
  * <td>K</td>
  * <td>am/pm</td>
- * <td>ÖÐµÄÐ¡Ê±Êý£¨0-11£©</td>
+ * <td>ï¿½Ðµï¿½Ð¡Ê±ï¿½ï¿½ï¿½ï¿½0-11ï¿½ï¿½</td>
  * <td>Number</td>
  * <td>0</td>
  * <td></tr>
  * <tr>
  * <td>h</td>
  * <td>am/pm</td>
- * <td>ÖÐµÄÐ¡Ê±Êý£¨1-12£©</td>
+ * <td>ï¿½Ðµï¿½Ð¡Ê±ï¿½ï¿½ï¿½ï¿½1-12ï¿½ï¿½</td>
  * <td>Number</td>
  * <td>12</td>
  * <td></tr>
  * <tr>
  * <td>m</td>
- * <td>Ð¡Ê±ÖÐµÄ·ÖÖÓÊý</td>
+ * <td>Ð¡Ê±ï¿½ÐµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½</td>
  * <td>Number</td>
  * <td>30</td>
  * <td></tr>
  * <tr>
  * <td>s</td>
- * <td>·ÖÖÓÖÐµÄÃëÊý</td>
+ * <td>ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½</td>
  * <td>Number</td>
  * <td>55</td>
  * <td></tr>
  * <tr>
  * <td>S</td>
- * <td>ºÁÃëÊý</td>
+ * <td>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
  * <td>Number</td>
  * <td>978</td>
  * <td></tr>
  * <tr>
  * <td>z</td>
- * <td>Ê±Çø</td>
+ * <td>Ê±ï¿½ï¿½</td>
  * <td>General</td>
  * <td>time</td>
  * <td>zone</td>
@@ -158,7 +158,7 @@ import java.util.TimeZone;
  * <td>GMT-08:00</tr>
  * <tr>
  * <td>Z</td>
- * <td>Ê±Çø</td>
+ * <td>Ê±ï¿½ï¿½</td>
  * <td>RFC</td>
  * <td>822</td>
  * <td>time</td>
@@ -167,7 +167,7 @@ import java.util.TimeZone;
  * <td></tr>
  * </table>
  * 
- * Ä£Ê½×ÖÄ¸Í¨³£ÊÇÖØ¸´µÄ£¬ÆäÊýÁ¿È·¶¨Æä¾«È·±íÊ¾£º
+ * Ä£Ê½ï¿½ï¿½Ä¸Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ä¾«È·ï¿½ï¿½Ê¾ï¿½ï¿½
  * 
  */
 public final class DateTools implements Serializable {
@@ -180,13 +180,13 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * ¸ñÊ½»¯ÈÕÆÚÏÔÊ¾¸ñÊ½
+  * ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ê½
   * 
   * @param sdate
-  *            Ô­Ê¼ÈÕÆÚ¸ñÊ½ s - ±íÊ¾ "yyyy-mm-dd" ÐÎÊ½µÄÈÕÆÚµÄ String ¶ÔÏó
+  *            Ô­Ê¼ï¿½ï¿½ï¿½Ú¸ï¿½Ê½ s - ï¿½ï¿½Ê¾ "yyyy-mm-dd" ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ String ï¿½ï¿½ï¿½ï¿½
   * @param format
-  *            ¸ñÊ½»¯ºóÈÕÆÚ¸ñÊ½
-  * @return ¸ñÊ½»¯ºóµÄÈÕÆÚÏÔÊ¾
+  *            ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½Ê½
+  * @return ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾
   */
  public static String dateFormat(String sdate, String format) {
   SimpleDateFormat formatter = new SimpleDateFormat(format);
@@ -197,13 +197,13 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * ÇóÁ½¸öÈÕÆÚÏà²îÌìÊý
+  * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * 
   * @param sd
-  *            ÆðÊ¼ÈÕÆÚ£¬¸ñÊ½yyyy-MM-dd
+  *            ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ê½yyyy-MM-dd
   * @param ed
-  *            ÖÕÖ¹ÈÕÆÚ£¬¸ñÊ½yyyy-MM-dd
-  * @return Á½¸öÈÕÆÚÏà²îÌìÊý
+  *            ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ê½yyyy-MM-dd
+  * @return ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   */
  public static long getIntervalDays(String sd, String ed) {
   return ((java.sql.Date.valueOf(ed)).getTime() - (java.sql.Date
@@ -212,13 +212,13 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * ÆðÊ¼ÄêÔÂyyyy-MMÓëÖÕÖ¹ÔÂyyyy-MMÖ®¼ä¿ç¶ÈµÄÔÂÊý¡£
+  * ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½yyyy-MMï¿½ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½yyyy-MMÖ®ï¿½ï¿½ï¿½Èµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * 
   * @param beginMonth
-  *            ¸ñÊ½Îªyyyy-MM
+  *            ï¿½ï¿½Ê½Îªyyyy-MM
   * @param endMonth
-  *            ¸ñÊ½Îªyyyy-MM
-  * @return ÕûÊý¡£
+  *            ï¿½ï¿½Ê½Îªyyyy-MM
+  * @return ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   */
  public static int getInterval(String beginMonth, String endMonth) {
   int intBeginYear = Integer.parseInt(beginMonth.substring(0, 4));
@@ -233,8 +233,8 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * ¸ù¾Ý¸ø¶¨µÄ·ÖÎöÎ»ÖÃ¿ªÊ¼·ÖÎöÈÕÆÚ/Ê±¼ä×Ö·û´®¡£ÀýÈç£¬Ê±¼äÎÄ±¾ "07/10/96 4:5 PM, PDT" »á·ÖÎö³ÉµÈÍ¬ÓÚ
-  * Date(837039928046) µÄ Date¡£
+  * ï¿½ï¿½ï¿½Ý¸ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½Î»ï¿½Ã¿ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/Ê±ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç£¬Ê±ï¿½ï¿½ï¿½Ä±ï¿½ "07/10/96 4:5 PM, PDT" ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Éµï¿½Í¬ï¿½ï¿½
+  * Date(837039928046) ï¿½ï¿½ Dateï¿½ï¿½
   * 
   * @param sDate
   * @param dateFormat
@@ -248,18 +248,18 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * È¡µÃµ±Ç°ÈÕÆÚµÄÄê·Ý£¬ÒÔyyyy¸ñÊ½·µ»Ø.
+  * È¡ï¿½Ãµï¿½Ç°ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½yyyyï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½.
   * 
-  * @return µ±Äê yyyy
+  * @return ï¿½ï¿½ï¿½ï¿½ yyyy
   */
  public static String getCurrentYear() {
   return getFormatCurrentTime("yyyy");
  }
 
  /**
-  * ×Ô¶¯·µ»ØÉÏÒ»Äê¡£ÀýÈçµ±Ç°Äê·ÝÊÇ2007Äê£¬ÄÇÃ´¾Í×Ô¶¯·µ»Ø2006
+  * ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ê¡£ï¿½ï¿½ï¿½çµ±Ç°ï¿½ï¿½ï¿½ï¿½ï¿½2007ï¿½ê£¬ï¿½ï¿½Ã´ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½2006
   * 
-  * @return ·µ»Ø½á¹ûµÄ¸ñÊ½Îª yyyy
+  * @return ï¿½ï¿½ï¿½Ø½ï¿½ï¿½ï¿½Ä¸ï¿½Ê½Îª yyyy
   */
  public static String getBeforeYear() {
   String currentYear = getFormatCurrentTime("yyyy");
@@ -268,124 +268,124 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * È¡µÃµ±Ç°ÈÕÆÚµÄÔÂ·Ý£¬ÒÔMM¸ñÊ½·µ»Ø.
+  * È¡ï¿½Ãµï¿½Ç°ï¿½ï¿½ï¿½Úµï¿½ï¿½Â·Ý£ï¿½ï¿½ï¿½MMï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½.
   * 
-  * @return µ±Ç°ÔÂ·Ý MM
+  * @return ï¿½ï¿½Ç°ï¿½Â·ï¿½ MM
   */
  public static String getCurrentMonth() {
   return getFormatCurrentTime("MM");
  }
 
  /**
-  * È¡µÃµ±Ç°ÈÕÆÚµÄÌìÊý£¬ÒÔ¸ñÊ½"dd"·µ»Ø.
+  * È¡ï¿½Ãµï¿½Ç°ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¸ï¿½Ê½"dd"ï¿½ï¿½ï¿½ï¿½.
   * 
-  * @return µ±Ç°ÔÂÖÐµÄÄ³Ììdd
+  * @return ï¿½ï¿½Ç°ï¿½ï¿½ï¿½Ðµï¿½Ä³ï¿½ï¿½dd
   */
  public static String getCurrentDay() {
   return getFormatCurrentTime("dd");
  }
 
  /**
-  * ·µ»Øµ±Ç°Ê±¼ä×Ö·û´®¡£
+  * ï¿½ï¿½ï¿½Øµï¿½Ç°Ê±ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½
   * <p>
-  * ¸ñÊ½£ºyyyy-MM-dd
+  * ï¿½ï¿½Ê½ï¿½ï¿½yyyy-MM-dd
   * 
-  * @return String Ö¸¶¨¸ñÊ½µÄÈÕÆÚ×Ö·û´®.
+  * @return String Ö¸ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½.
   */
  public static String getCurrentDate() {
   return getFormatDateTime(new Date(), "yyyy-MM-dd");
  }
  
  /**
-  * ·µ»Øµ±Ç°Ö¸¶¨µÄÊ±¼ä´Á¡£¸ñÊ½Îªyyyy-MM-dd HH:mm:ss
-  * @return ¸ñÊ½Îªyyyy-MM-dd HH:mm:ss£¬×Ü¹²19Î»¡£
+  * ï¿½ï¿½ï¿½Øµï¿½Ç°Ö¸ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½Îªyyyy-MM-dd HH:mm:ss
+  * @return ï¿½ï¿½Ê½Îªyyyy-MM-dd HH:mm:ssï¿½ï¿½ï¿½Ü¹ï¿½19Î»ï¿½ï¿½
   */
  public static String getCurrentDateTime() {
   return getFormatDateTime(new Date(), "yyyy-MM-dd HH:mm:ss");
  }
 
  /**
-  * ·µ»Ø¸ø¶¨Ê±¼ä×Ö·û´®¡£
+  * ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½
   * <p>
-  * ¸ñÊ½£ºyyyy-MM-dd
+  * ï¿½ï¿½Ê½ï¿½ï¿½yyyy-MM-dd
   * 
   * @param date
-  *            ÈÕÆÚ
-  * @return String Ö¸¶¨¸ñÊ½µÄÈÕÆÚ×Ö·û´®.
+  *            ï¿½ï¿½ï¿½ï¿½
+  * @return String Ö¸ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½.
   */
  public static String getFormatDate(Date date) {
   return getFormatDateTime(date, "yyyy-MM-dd");
  }
 
  /**
-  * ¸ù¾ÝÖÆ¶¨µÄ¸ñÊ½£¬·µ»ØÈÕÆÚ×Ö·û´®¡£ÀýÈç2007-05-05
+  * ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½Ä¸ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2007-05-05
   * 
   * @param format
-  *            "yyyy-MM-dd" »òÕß "yyyy/MM/dd",µ±È»Ò²¿ÉÒÔÊÇ±ðµÄÐÎÊ½¡£
-  * @return Ö¸¶¨¸ñÊ½µÄÈÕÆÚ×Ö·û´®¡£
+  *            "yyyy-MM-dd" ï¿½ï¿½ï¿½ï¿½ "yyyy/MM/dd",ï¿½ï¿½È»Ò²ï¿½ï¿½ï¿½ï¿½ï¿½Ç±ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½
+  * @return Ö¸ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½
   */
  public static String getFormatDate(String format) {
   return getFormatDateTime(new Date(), format);
  }
 
  /**
-  * ·µ»Øµ±Ç°Ê±¼ä×Ö·û´®¡£
+  * ï¿½ï¿½ï¿½Øµï¿½Ç°Ê±ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½
   * <p>
-  * ¸ñÊ½£ºyyyy-MM-dd HH:mm:ss
+  * ï¿½ï¿½Ê½ï¿½ï¿½yyyy-MM-dd HH:mm:ss
   * 
-  * @return String Ö¸¶¨¸ñÊ½µÄÈÕÆÚ×Ö·û´®.
+  * @return String Ö¸ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½.
   */
  public static String getCurrentTime() {
   return getFormatDateTime(new Date(), "yyyy-MM-dd HH:mm:ss");
  }
 
  /**
-  * ·µ»Ø¸ø¶¨Ê±¼ä×Ö·û´®¡£
+  * ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½
   * <p>
-  * ¸ñÊ½£ºyyyy-MM-dd HH:mm:ss
+  * ï¿½ï¿½Ê½ï¿½ï¿½yyyy-MM-dd HH:mm:ss
   * 
   * @param date
-  *            ÈÕÆÚ
-  * @return String Ö¸¶¨¸ñÊ½µÄÈÕÆÚ×Ö·û´®.
+  *            ï¿½ï¿½ï¿½ï¿½
+  * @return String Ö¸ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½.
   */
  public static String getFormatTime(Date date) {
   return getFormatDateTime(date, "yyyy-MM-dd HH:mm:ss");
  }
  
  /**
-  * ·µ»Ø¸ø¶ÌÊ±¼ä×Ö·û´®¡£
+  * ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½
   * <p>
-  * ¸ñÊ½£ºyyyy-MM-dd
+  * ï¿½ï¿½Ê½ï¿½ï¿½yyyy-MM-dd
   * 
   * @param date
-  *            ÈÕÆÚ
-  * @return String Ö¸¶¨¸ñÊ½µÄÈÕÆÚ×Ö·û´®.
+  *            ï¿½ï¿½ï¿½ï¿½
+  * @return String Ö¸ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½.
   */
  public static String getFormatShortTime(Date date) {
   return getFormatDateTime(date, "yyyy-MM-dd");
  }
 
  /**
-  * ¸ù¾Ý¸ø¶¨µÄ¸ñÊ½£¬·µ»ØÊ±¼ä×Ö·û´®¡£
+  * ï¿½ï¿½ï¿½Ý¸ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½
   * <p>
-  * ¸ñÊ½²ÎÕÕÀàÃè»æÖÐËµÃ÷.ºÍ·½·¨getFormatDateÊÇÒ»ÑùµÄ¡£
+  * ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½.ï¿½Í·ï¿½ï¿½ï¿½getFormatDateï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ä¡ï¿½
   * 
   * @param format
-  *            ÈÕÆÚ¸ñÊ½×Ö·û´®
-  * @return String Ö¸¶¨¸ñÊ½µÄÈÕÆÚ×Ö·û´®.
+  *            ï¿½ï¿½ï¿½Ú¸ï¿½Ê½ï¿½Ö·ï¿½ï¿½ï¿½
+  * @return String Ö¸ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½.
   */
  public static String getFormatCurrentTime(String format) {
   return getFormatDateTime(new Date(), format);
  }
 
  /**
-  * ¸ù¾Ý¸ø¶¨µÄ¸ñÊ½ÓëÊ±¼ä(DateÀàÐÍµÄ)£¬·µ»ØÊ±¼ä×Ö·û´®¡£×îÎªÍ¨ÓÃ¡£<br>
+  * ï¿½ï¿½ï¿½Ý¸ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½Ê½ï¿½ï¿½Ê±ï¿½ï¿½(Dateï¿½ï¿½ï¿½Íµï¿½)ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎªÍ¨ï¿½Ã¡ï¿½<br>
   * 
   * @param date
-  *            Ö¸¶¨µÄÈÕÆÚ
+  *            Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * @param format
-  *            ÈÕÆÚ¸ñÊ½×Ö·û´®
-  * @return String Ö¸¶¨¸ñÊ½µÄÈÕÆÚ×Ö·û´®.
+  *            ï¿½ï¿½ï¿½Ú¸ï¿½Ê½ï¿½Ö·ï¿½ï¿½ï¿½
+  * @return String Ö¸ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½.
   */
  public static String getFormatDateTime(Date date, String format) {
   SimpleDateFormat sdf = new SimpleDateFormat(format);
@@ -393,15 +393,15 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * È¡µÃÖ¸¶¨ÄêÔÂÈÕµÄÈÕÆÚ¶ÔÏó.
+  * È¡ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½.
   * 
   * @param year
-  *            Äê
+  *            ï¿½ï¿½
   * @param month
-  *            ÔÂ×¢ÒâÊÇ´Ó1µ½12
+  *            ï¿½ï¿½×¢ï¿½ï¿½ï¿½Ç´ï¿½1ï¿½ï¿½12
   * @param day
-  *            ÈÕ
-  * @return Ò»¸öjava.util.Date()ÀàÐÍµÄ¶ÔÏó
+  *            ï¿½ï¿½
+  * @return Ò»ï¿½ï¿½java.util.Date()ï¿½ï¿½ï¿½ÍµÄ¶ï¿½ï¿½ï¿½
   */
  public static Date getDateObj(int year, int month, int day) {
   Calendar c = new GregorianCalendar();
@@ -410,7 +410,7 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * »ñÈ¡Ö¸¶¨ÈÕÆÚµÄÏÂÒ»Ìì¡£
+  * ï¿½ï¿½È¡Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½Ò»ï¿½ì¡£
   * 
   * @param date
   *            yyyy/MM/dd
@@ -428,12 +428,12 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * »ñÈ¡ÓëÖ¸¶¨ÈÕÆÚÏà²îÖ¸¶¨ÌìÊýµÄÈÕÆÚ¡£
+  * ï¿½ï¿½È¡ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¡ï¿½
   * 
   * @param date
   *            yyyy/MM/dd
   * @param offset
-  *            ÕýÕûÊý
+  *            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * @return yyyy/MM/dd
   */
  public static String getDateOffset(String date, int offset) {
@@ -449,13 +449,13 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * È¡µÃÖ¸¶¨·Ö¸ô·û·Ö¸îµÄÄêÔÂÈÕµÄÈÕÆÚ¶ÔÏó.
+  * È¡ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½.
   * 
   * @param argsDate
-  *            ¸ñÊ½Îª"yyyy-MM-dd"
+  *            ï¿½ï¿½Ê½Îª"yyyy-MM-dd"
   * @param split
-  *            Ê±¼ä¸ñÊ½µÄ¼ä¸ô·û£¬ÀýÈç¡°-¡±£¬¡°/¡±£¬ÒªºÍÊ±¼äÒ»ÖÂÆðÀ´¡£
-  * @return Ò»¸öjava.util.Date()ÀàÐÍµÄ¶ÔÏó
+  *            Ê±ï¿½ï¿½ï¿½Ê½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç¡°-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ê±ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  * @return Ò»ï¿½ï¿½java.util.Date()ï¿½ï¿½ï¿½ÍµÄ¶ï¿½ï¿½ï¿½
   */
  public static Date getDateObj(String argsDate, String split) {
   String[] temp = argsDate.split(split);
@@ -466,15 +466,15 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * È¡µÃ¸ø¶¨×Ö·û´®ÃèÊöµÄÈÕÆÚ¶ÔÏó£¬ÃèÊöÄ£Ê½²ÉÓÃpatternÖ¸¶¨µÄ¸ñÊ½.
+  * È¡ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½ï¿½ï¿½patternÖ¸ï¿½ï¿½ï¿½Ä¸ï¿½Ê½.
   * 
   * @param dateStr
-  *            ÈÕÆÚÃèÊö ´Ó¸ø¶¨×Ö·û´®µÄ¿ªÊ¼·ÖÎöÎÄ±¾£¬ÒÔÉú³ÉÒ»¸öÈÕÆÚ¡£¸Ã·½·¨²»Ê¹ÓÃ¸ø¶¨×Ö·û´®µÄÕû¸öÎÄ±¾¡£ ÓÐ¹ØÈÕÆÚ·ÖÎöµÄ¸ü¶àÐÅÏ¢£¬Çë²ÎÔÄ
-  *            parse(String, ParsePosition) ·½·¨¡£Ò»¸ö String£¬Ó¦´ÓÆä¿ªÊ¼´¦½øÐÐ·ÖÎö
+  *            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ó¸ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ú¡ï¿½ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ ï¿½Ð¹ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  *            parse(String, ParsePosition) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ Stringï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ä¿ªÊ¼ï¿½ï¿½ï¿½ï¿½ï¿½Ð·ï¿½ï¿½ï¿½
   * 
   * @param pattern
-  *            ÈÕÆÚÄ£Ê½
-  * @return ¸ø¶¨×Ö·û´®ÃèÊöµÄÈÕÆÚ¶ÔÏó¡£
+  *            ï¿½ï¿½ï¿½ï¿½Ä£Ê½
+  * @return ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½
   */
  public static Date getDateFromString(String dateStr, String pattern) {
   SimpleDateFormat sdf = new SimpleDateFormat(pattern);
@@ -488,9 +488,9 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * È¡µÃµ±Ç°Date¶ÔÏó.
+  * È¡ï¿½Ãµï¿½Ç°Dateï¿½ï¿½ï¿½ï¿½.
   * 
-  * @return Date µ±Ç°Date¶ÔÏó.
+  * @return Date ï¿½ï¿½Ç°Dateï¿½ï¿½ï¿½ï¿½.
   */
  public static Date getDateObj() {
   Calendar c = new GregorianCalendar();
@@ -499,43 +499,43 @@ public final class DateTools implements Serializable {
 
  /**
   * 
-  * @return µ±Ç°ÔÂ·ÝÓÐ¶àÉÙÌì£»
+  * @return ï¿½ï¿½Ç°ï¿½Â·ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ì£»
   */
  public static int getDaysOfCurMonth() {
-  int curyear = new Integer(getCurrentYear()).intValue(); // µ±Ç°Äê·Ý
-  int curMonth = new Integer(getCurrentMonth()).intValue();// µ±Ç°ÔÂ·Ý
+  int curyear = new Integer(getCurrentYear()).intValue(); // ï¿½ï¿½Ç°ï¿½ï¿½ï¿½
+  int curMonth = new Integer(getCurrentMonth()).intValue();// ï¿½ï¿½Ç°ï¿½Â·ï¿½
   int mArray[] = new int[] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30,
     31 };
-  // ÅÐ¶ÏÈòÄêµÄÇé¿ö £¬2ÔÂ·ÝÓÐ29Ìì£»
+  // ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½2ï¿½Â·ï¿½ï¿½ï¿½29ï¿½ì£»
   if ((curyear % 400 == 0)
     || ((curyear % 100 != 0) && (curyear % 4 == 0))) {
    mArray[1] = 29;
   }
   return mArray[curMonth - 1];
-  // Èç¹ûÒª·µ»ØÏÂ¸öÔÂµÄÌìÊý£¬×¢Òâ´¦ÀíÔÂ·Ý12µÄÇé¿ö£¬·ÀÖ¹Êý×éÔ½½ç£»
-  // Èç¹ûÒª·µ»ØÉÏ¸öÔÂµÄÌìÊý£¬×¢Òâ´¦ÀíÔÂ·Ý1µÄÇé¿ö£¬·ÀÖ¹Êý×éÔ½½ç£»
+  // ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Â¸ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½â´¦ï¿½ï¿½ï¿½Â·ï¿½12ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ç£»
+  // ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½â´¦ï¿½ï¿½ï¿½Â·ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ç£»
  }
 
  /**
-  * ¸ù¾ÝÖ¸¶¨µÄÄêÔÂ ·µ»ØÖ¸¶¨ÔÂ·Ý£¨yyyy-MM£©ÓÐ¶àÉÙÌì¡£
+  * ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Â·Ý£ï¿½yyyy-MMï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ì¡£
   * 
   * @param time
   *            yyyy-MM
-  * @return ÌìÊý£¬Ö¸¶¨ÔÂ·ÝµÄÌìÊý¡£
+  * @return ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Â·Ýµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   */
  public static int getDaysOfCurMonth(final String time) {
   if(time.length()!=7){
-   throw new NullPointerException("²ÎÊýµÄ¸ñÊ½±ØÐëÊÇyyyy-MM");
+   throw new NullPointerException("ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½yyyy-MM");
   }
   String[] timeArray = time.split("-");
-  int curyear = new Integer(timeArray[0]).intValue(); // µ±Ç°Äê·Ý
-  int curMonth = new Integer(timeArray[1]).intValue();// µ±Ç°ÔÂ·Ý
+  int curyear = new Integer(timeArray[0]).intValue(); // ï¿½ï¿½Ç°ï¿½ï¿½ï¿½
+  int curMonth = new Integer(timeArray[1]).intValue();// ï¿½ï¿½Ç°ï¿½Â·ï¿½
   if(curMonth>12){
-   throw new NullPointerException("²ÎÊýµÄ¸ñÊ½±ØÐëÊÇyyyy-MM£¬¶øÇÒÔÂ·Ý±ØÐëÐ¡ÓÚµÈÓÚ12¡£");
+   throw new NullPointerException("ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½yyyy-MMï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·Ý±ï¿½ï¿½ï¿½Ð¡ï¿½Úµï¿½ï¿½ï¿½12ï¿½ï¿½");
   }
   int mArray[] = new int[] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30,
     31 };
-  // ÅÐ¶ÏÈòÄêµÄÇé¿ö £¬2ÔÂ·ÝÓÐ29Ìì£»
+  // ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½2ï¿½Â·ï¿½ï¿½ï¿½29ï¿½ì£»
   if ((curyear % 400 == 0)
     || ((curyear % 100 != 0) && (curyear % 4 == 0))) {
    mArray[1] = 29;
@@ -544,67 +544,67 @@ public final class DateTools implements Serializable {
    return mArray[0];
   }
   return mArray[curMonth - 1];
-  // Èç¹ûÒª·µ»ØÏÂ¸öÔÂµÄÌìÊý£¬×¢Òâ´¦ÀíÔÂ·Ý12µÄÇé¿ö£¬·ÀÖ¹Êý×éÔ½½ç£»
-  // Èç¹ûÒª·µ»ØÉÏ¸öÔÂµÄÌìÊý£¬×¢Òâ´¦ÀíÔÂ·Ý1µÄÇé¿ö£¬·ÀÖ¹Êý×éÔ½½ç£»
+  // ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Â¸ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½â´¦ï¿½ï¿½ï¿½Â·ï¿½12ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ç£»
+  // ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½â´¦ï¿½ï¿½ï¿½Â·ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ç£»
  }
 
  /**
-  * ·µ»ØÖ¸¶¨ÎªÄê¶ÈÎªyearÔÂ¶ÈmonthµÄÔÂ·ÝÄÚ£¬µÚweekOfMonth¸öÐÇÆÚµÄµÚdayOfWeekÌìÊÇµ±ÔÂµÄ¼¸ºÅ¡£<br>
+  * ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½Îªï¿½ï¿½ï¿½Îªyearï¿½Â¶ï¿½monthï¿½ï¿½ï¿½Â·ï¿½ï¿½Ú£ï¿½ï¿½ï¿½weekOfMonthï¿½ï¿½ï¿½ï¿½ï¿½ÚµÄµï¿½dayOfWeekï¿½ï¿½ï¿½Çµï¿½ï¿½ÂµÄ¼ï¿½ï¿½Å¡ï¿½<br>
   * 00 00 00 01 02 03 04 <br>
   * 05 06 07 08 09 10 11<br>
   * 12 13 14 15 16 17 18<br>
   * 19 20 21 22 23 24 25<br>
   * 26 27 28 29 30 31 <br>
-  * 2006ÄêµÄµÚÒ»¸öÖÜµÄ1µ½7ÌìÎª£º05 06 07 01 02 03 04 <br>
-  * 2006ÄêµÄµÚ¶þ¸öÖÜµÄ1µ½7ÌìÎª£º12 13 14 08 09 10 11 <br>
-  * 2006ÄêµÄµÚÈý¸öÖÜµÄ1µ½7ÌìÎª£º19 20 21 15 16 17 18 <br>
-  * 2006ÄêµÄµÚËÄ¸öÖÜµÄ1µ½7ÌìÎª£º26 27 28 22 23 24 25 <br>
-  * 2006ÄêµÄµÚÎå¸öÖÜµÄ1µ½7ÌìÎª£º02 03 04 29 30 31 01 ¡£±¾ÔÂÃ»ÓÐ¾Í×Ô¶¯×ªµ½ÏÂ¸öÔÂÁË¡£
+  * 2006ï¿½ï¿½Äµï¿½Ò»ï¿½ï¿½ï¿½Üµï¿½1ï¿½ï¿½7ï¿½ï¿½Îªï¿½ï¿½05 06 07 01 02 03 04 <br>
+  * 2006ï¿½ï¿½ÄµÚ¶ï¿½ï¿½ï¿½ï¿½Üµï¿½1ï¿½ï¿½7ï¿½ï¿½Îªï¿½ï¿½12 13 14 08 09 10 11 <br>
+  * 2006ï¿½ï¿½Äµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Üµï¿½1ï¿½ï¿½7ï¿½ï¿½Îªï¿½ï¿½19 20 21 15 16 17 18 <br>
+  * 2006ï¿½ï¿½Äµï¿½ï¿½Ä¸ï¿½ï¿½Üµï¿½1ï¿½ï¿½7ï¿½ï¿½Îªï¿½ï¿½26 27 28 22 23 24 25 <br>
+  * 2006ï¿½ï¿½Äµï¿½ï¿½ï¿½ï¿½ï¿½Üµï¿½1ï¿½ï¿½7ï¿½ï¿½Îªï¿½ï¿½02 03 04 29 30 31 01 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð¾ï¿½ï¿½Ô¶ï¿½×ªï¿½ï¿½ï¿½Â¸ï¿½ï¿½ï¿½ï¿½Ë¡ï¿½
   * 
   * @param year
-  *            ÐÎÊ½Îªyyyy <br>
+  *            ï¿½ï¿½Ê½Îªyyyy <br>
   * @param month
-  *            ÐÎÊ½ÎªMM,²ÎÊýÖµÔÚ[1-12]¡£<br>
+  *            ï¿½ï¿½Ê½ÎªMM,ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½[1-12]ï¿½ï¿½<br>
   * @param weekOfMonth
-  *            ÔÚ[1-6],ÒòÎªÒ»¸öÔÂ×î¶àÓÐ6¸öÖÜ¡£<br>
+  *            ï¿½ï¿½[1-6],ï¿½ï¿½ÎªÒ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½6ï¿½ï¿½ï¿½Ü¡ï¿½<br>
   * @param dayOfWeek
-  *            Êý×ÖÔÚ1µ½7Ö®¼ä£¬°üÀ¨1ºÍ7¡£1±íÊ¾ÐÇÆÚÌì£¬7±íÊ¾ÐÇÆÚÁù<br>
-  *            -6ÎªÐÇÆÚÈÕ-1ÎªÐÇÆÚÎå£¬0ÎªÐÇÆÚÁù <br>
+  *            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½7Ö®ï¿½ä£¬ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½7ï¿½ï¿½1ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ì£¬7ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<br>
+  *            -6Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-1Îªï¿½ï¿½ï¿½ï¿½ï¿½å£¬0Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ <br>
   * @return <type>int</type>
   */
  public static int getDayofWeekInMonth(String year, String month,
    String weekOfMonth, String dayOfWeek) {
   Calendar cal = new GregorianCalendar();
-  // ÔÚ¾ßÓÐÄ¬ÈÏÓïÑÔ»·¾³µÄÄ¬ÈÏÊ±ÇøÄÚÊ¹ÓÃµ±Ç°Ê±¼ä¹¹ÔìÒ»¸öÄ¬ÈÏµÄ GregorianCalendar¡£
+  // ï¿½Ú¾ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½Ô»ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ãµï¿½Ç°Ê±ï¿½ä¹¹ï¿½ï¿½Ò»ï¿½ï¿½Ä¬ï¿½Ïµï¿½ GregorianCalendarï¿½ï¿½
   int y = new Integer(year).intValue();
   int m = new Integer(month).intValue();
-  cal.clear();// ²»±£ÁôÒÔÇ°µÄÉèÖÃ
-  cal.set(y, m - 1, 1);// ½«ÈÕÆÚÉèÖÃÎª±¾ÔÂµÄµÚÒ»Ìì¡£
+  cal.clear();// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  cal.set(y, m - 1, 1);// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ÂµÄµï¿½Ò»ï¿½ì¡£
   cal.set(Calendar.DAY_OF_WEEK_IN_MONTH, new Integer(weekOfMonth)
     .intValue());
   cal.set(Calendar.DAY_OF_WEEK, new Integer(dayOfWeek).intValue());
   // System.out.print(cal.get(Calendar.MONTH)+" ");
-  // System.out.print("µ±"+cal.get(Calendar.WEEK_OF_MONTH)+"\t");
-  // WEEK_OF_MONTH±íÊ¾µ±ÌìÔÚ±¾ÔÂµÄµÚ¼¸¸öÖÜ¡£²»¹Ü1ºÅÊÇÐÇÆÚ¼¸£¬¶¼±íÊ¾ÔÚ±¾ÔÂµÄµÚÒ»¸öÖÜ
+  // System.out.print("ï¿½ï¿½"+cal.get(Calendar.WEEK_OF_MONTH)+"\t");
+  // WEEK_OF_MONTHï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½Ú±ï¿½ï¿½ÂµÄµÚ¼ï¿½ï¿½ï¿½ï¿½Ü¡ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½Ú±ï¿½ï¿½ÂµÄµï¿½Ò»ï¿½ï¿½ï¿½ï¿½
   return cal.get(Calendar.DAY_OF_MONTH);
  }
 
  /**
-  * ¸ù¾ÝÖ¸¶¨µÄÄêÔÂÈÕÐ¡Ê±·ÖÃë£¬·µ»ØÒ»¸öjava.Util.Date¶ÔÏó¡£
+  * ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡Ê±ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½java.Util.Dateï¿½ï¿½ï¿½ï¿½
   * 
   * @param year
-  *            Äê
+  *            ï¿½ï¿½
   * @param month
-  *            ÔÂ 0-11
+  *            ï¿½ï¿½ 0-11
   * @param date
-  *            ÈÕ
+  *            ï¿½ï¿½
   * @param hourOfDay
   *            Ð¡Ê± 0-23
   * @param minute
-  *            ·Ö 0-59
+  *            ï¿½ï¿½ 0-59
   * @param second
-  *            Ãë 0-59
-  * @return Ò»¸öDate¶ÔÏó¡£
+  *            ï¿½ï¿½ 0-59
+  * @return Ò»ï¿½ï¿½Dateï¿½ï¿½ï¿½ï¿½
   */
  public static Date getDate(int year, int month, int date, int hourOfDay,
    int minute, int second) {
@@ -614,13 +614,13 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * ¸ù¾ÝÖ¸¶¨µÄÄê¡¢ÔÂ¡¢ÈÕ·µ»Øµ±Ç°ÊÇÐÇÆÚ¼¸¡£1±íÊ¾ÐÇÆÚÌì¡¢2±íÊ¾ÐÇÆÚÒ»¡¢7±íÊ¾ÐÇÆÚÁù¡£
+  * ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ê¡¢ï¿½Â¡ï¿½ï¿½Õ·ï¿½ï¿½Øµï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½1ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ì¡¢2ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½7ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * 
   * @param year
   * @param month
-  *            monthÊÇ´Ó1¿ªÊ¼µÄ12½áÊø
+  *            monthï¿½Ç´ï¿½1ï¿½ï¿½Ê¼ï¿½ï¿½12ï¿½ï¿½ï¿½ï¿½
   * @param day
-  * @return ·µ»ØÒ»¸ö´ú±íµ±ÆÚÈÕÆÚÊÇÐÇÆÚ¼¸µÄÊý×Ö¡£1±íÊ¾ÐÇÆÚÌì¡¢2±íÊ¾ÐÇÆÚÒ»¡¢7±íÊ¾ÐÇÆÚÁù¡£
+  * @return ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¡ï¿½1ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ì¡¢2ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½7ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   */
  public static int getDayOfWeek(String year, String month, String day) {
   Calendar cal = new GregorianCalendar(new Integer(year).intValue(),
@@ -629,11 +629,11 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * ¸ù¾ÝÖ¸¶¨µÄÄê¡¢ÔÂ¡¢ÈÕ·µ»Øµ±Ç°ÊÇÐÇÆÚ¼¸¡£1±íÊ¾ÐÇÆÚÌì¡¢2±íÊ¾ÐÇÆÚÒ»¡¢7±íÊ¾ÐÇÆÚÁù¡£
+  * ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ê¡¢ï¿½Â¡ï¿½ï¿½Õ·ï¿½ï¿½Øµï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½1ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ì¡¢2ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½7ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * 
   * @param date
-  *            "yyyy/MM/dd",»òÕß"yyyy-MM-dd"
-  * @return ·µ»ØÒ»¸ö´ú±íµ±ÆÚÈÕÆÚÊÇÐÇÆÚ¼¸µÄÊý×Ö¡£1±íÊ¾ÐÇÆÚÌì¡¢2±íÊ¾ÐÇÆÚÒ»¡¢7±íÊ¾ÐÇÆÚÁù¡£
+  *            "yyyy/MM/dd",ï¿½ï¿½ï¿½ï¿½"yyyy-MM-dd"
+  * @return ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¡ï¿½1ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ì¡¢2ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½7ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   */
  public static int getDayOfWeek(String date) {
   String[] temp = null;
@@ -647,25 +647,25 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * ·µ»Øµ±Ç°ÈÕÆÚÊÇÐÇÆÚ¼¸¡£ÀýÈç£ºÐÇÆÚÈÕ¡¢ÐÇÆÚÒ»¡¢ÐÇÆÚÁùµÈµÈ¡£
+  * ï¿½ï¿½ï¿½Øµï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç£ºï¿½ï¿½ï¿½ï¿½ï¿½Õ¡ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÈµÈ¡ï¿½
   * 
   * @param date
-  *            ¸ñÊ½Îª yyyy/MM/dd »òÕß yyyy-MM-dd
-  * @return ·µ»Øµ±Ç°ÈÕÆÚÊÇÐÇÆÚ¼¸
+  *            ï¿½ï¿½Ê½Îª yyyy/MM/dd ï¿½ï¿½ï¿½ï¿½ yyyy-MM-dd
+  * @return ï¿½ï¿½ï¿½Øµï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½
   */
  public static String getChinaDayOfWeek(String date) {
-  String[] weeks = new String[] { "ÐÇÆÚÈÕ", "ÐÇÆÚÒ»", "ÐÇÆÚ¶þ", "ÐÇÆÚÈý", "ÐÇÆÚËÄ",
-    "ÐÇÆÚÎå", "ÐÇÆÚÁù" };
+  String[] weeks = new String[] { "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½Ò»", "ï¿½ï¿½ï¿½Ú¶ï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
+    "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" };
   int week = getDayOfWeek(date);
   return weeks[week - 1];
  }
 
  /**
-  * ¸ù¾ÝÖ¸¶¨µÄÄê¡¢ÔÂ¡¢ÈÕ·µ»Øµ±Ç°ÊÇÐÇÆÚ¼¸¡£1±íÊ¾ÐÇÆÚÌì¡¢2±íÊ¾ÐÇÆÚÒ»¡¢7±íÊ¾ÐÇÆÚÁù¡£
+  * ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ê¡¢ï¿½Â¡ï¿½ï¿½Õ·ï¿½ï¿½Øµï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½1ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ì¡¢2ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½7ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * 
   * @param date
   * 
-  * @return ·µ»ØÒ»¸ö´ú±íµ±ÆÚÈÕÆÚÊÇÐÇÆÚ¼¸µÄÊý×Ö¡£1±íÊ¾ÐÇÆÚÌì¡¢2±íÊ¾ÐÇÆÚÒ»¡¢7±íÊ¾ÐÇÆÚÁù¡£
+  * @return ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¡ï¿½1ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ì¡¢2ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½7ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   */
  public static int getDayOfWeek(Date date) {
   Calendar cal = new GregorianCalendar();
@@ -674,12 +674,12 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * ·µ»ØÖÆ¶¨ÈÕÆÚËùÔÚµÄÖÜÊÇÒ»ÄêÖÐµÄµÚ¼¸¸öÖÜ¡£<br>
+  * ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ÐµÄµÚ¼ï¿½ï¿½ï¿½ï¿½Ü¡ï¿½<br>
   * created by wangmj at 20060324.<br>
   * 
   * @param year
   * @param month
-  *            ·¶Î§1-12<br>
+  *            ï¿½ï¿½Î§1-12<br>
   * @param day
   * @return int
   */
@@ -692,13 +692,13 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * È¡µÃ¸ø¶¨ÈÕÆÚ¼ÓÉÏÒ»¶¨ÌìÊýºóµÄÈÕÆÚ¶ÔÏó.
+  * È¡ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½.
   * 
   * @param date
-  *            ¸ø¶¨µÄÈÕÆÚ¶ÔÏó
+  *            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½
   * @param amount
-  *            ÐèÒªÌí¼ÓµÄÌìÊý£¬Èç¹ûÊÇÏòÇ°µÄÌìÊý£¬Ê¹ÓÃ¸ºÊý¾Í¿ÉÒÔ.
-  * @return Date ¼ÓÉÏÒ»¶¨ÌìÊýÒÔºóµÄDate¶ÔÏó.
+  *            ï¿½ï¿½Òªï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½.
+  * @return Date ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôºï¿½ï¿½Dateï¿½ï¿½ï¿½ï¿½.
   */
  public static Date getDateAdd(Date date, int amount) {
   Calendar cal = new GregorianCalendar();
@@ -708,15 +708,15 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * È¡µÃ¸ø¶¨ÈÕÆÚ¼ÓÉÏÒ»¶¨ÌìÊýºóµÄÈÕÆÚ¶ÔÏó.
+  * È¡ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½.
   * 
   * @param date
-  *            ¸ø¶¨µÄÈÕÆÚ¶ÔÏó
+  *            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½
   * @param amount
-  *            ÐèÒªÌí¼ÓµÄÌìÊý£¬Èç¹ûÊÇÏòÇ°µÄÌìÊý£¬Ê¹ÓÃ¸ºÊý¾Í¿ÉÒÔ.
+  *            ï¿½ï¿½Òªï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½.
   * @param format
-  *            Êä³ö¸ñÊ½.
-  * @return Date ¼ÓÉÏÒ»¶¨ÌìÊýÒÔºóµÄDate¶ÔÏó.
+  *            ï¿½ï¿½ï¿½ï¿½ï¿½Ê½.
+  * @return Date ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôºï¿½ï¿½Dateï¿½ï¿½ï¿½ï¿½.
   */
  public static String getFormatDateAdd(Date date, int amount, String format) {
   Calendar cal = new GregorianCalendar();
@@ -726,13 +726,13 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * »ñµÃµ±Ç°ÈÕÆÚ¹Ì¶¨¼ä¸ôÌìÊýµÄÈÕÆÚ£¬ÈçÇ°60ÌìdateAdd(-60)
+  * ï¿½ï¿½Ãµï¿½Ç°ï¿½ï¿½ï¿½Ú¹Ì¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ç°60ï¿½ï¿½dateAdd(-60)
   * 
   * @param amount
-  *            ¾à½ñÌìµÄ¼ä¸ôÈÕÆÚ³¤¶È£¬ÏòÇ°Îª¸º£¬ÏòºóÎªÕý
+  *            ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½Ú³ï¿½ï¿½È£ï¿½ï¿½ï¿½Ç°Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½
   * @param format
-  *            Êä³öÈÕÆÚµÄ¸ñÊ½.
-  * @return java.lang.String °´ÕÕ¸ñÊ½Êä³öµÄ¼ä¸ôµÄÈÕÆÚ×Ö·û´®.
+  *            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÚµÄ¸ï¿½Ê½.
+  * @return java.lang.String ï¿½ï¿½ï¿½Õ¸ï¿½Ê½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½.
   */
  public static String getFormatCurrentAdd(int amount, String format) {
 
@@ -742,23 +742,23 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * È¡µÃ¸ø¶¨¸ñÊ½µÄ×òÌìµÄÈÕÆÚÊä³ö
+  * È¡ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * 
   * @param format
-  *            ÈÕÆÚÊä³öµÄ¸ñÊ½
-  * @return String ¸ø¶¨¸ñÊ½µÄÈÕÆÚ×Ö·û´®.
+  *            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½Ê½
+  * @return String ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½.
   */
  public static String getFormatYestoday(String format) {
   return getFormatCurrentAdd(-1, format);
  }
 
  /**
-  * ·µ»ØÖ¸¶¨ÈÕÆÚµÄÇ°Ò»Ìì¡£<br>
+  * ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½Ç°Ò»ï¿½ì¡£<br>
   * 
   * @param sourceDate
   * @param format
   *            yyyy MM dd hh mm ss
-  * @return ·µ»ØÈÕÆÚ×Ö·û´®£¬ÐÎÊ½ºÍformcatÒ»ÖÂ¡£
+  * @return ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½formcatÒ»ï¿½Â¡ï¿½
   */
  public static String getYestoday(String sourceDate, String format) {
   return getFormatDateAdd(getDateFromString(sourceDate, format), -1,
@@ -766,21 +766,21 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * ·µ»ØÃ÷ÌìµÄÈÕÆÚ£¬<br>
+  * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½<br>
   * 
   * @param format
-  * @return ·µ»ØÈÕÆÚ×Ö·û´®£¬ÐÎÊ½ºÍformcatÒ»ÖÂ¡£
+  * @return ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½formcatÒ»ï¿½Â¡ï¿½
   */
  public static String getFormatTomorrow(String format) {
   return getFormatCurrentAdd(1, format);
  }
 
  /**
-  * ·µ»ØÖ¸¶¨ÈÕÆÚµÄºóÒ»Ìì¡£<br>
+  * ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ÚµÄºï¿½Ò»ï¿½ì¡£<br>
   * 
   * @param sourceDate
   * @param format
-  * @return ·µ»ØÈÕÆÚ×Ö·û´®£¬ÐÎÊ½ºÍformcatÒ»ÖÂ¡£
+  * @return ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½formcatÒ»ï¿½Â¡ï¿½
   */
  public static String getFormatDateTommorrow(String sourceDate, String format) {
   return getFormatDateAdd(getDateFromString(sourceDate, format), 1,
@@ -788,10 +788,10 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * ¸ù¾ÝÖ÷»úµÄÄ¬ÈÏ TimeZone£¬À´»ñµÃÖ¸¶¨ÐÎÊ½µÄÊ±¼ä×Ö·û´®¡£
+  * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½ TimeZoneï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½
   * 
   * @param dateFormat
-  * @return ·µ»ØÈÕÆÚ×Ö·û´®£¬ÐÎÊ½ºÍformcatÒ»ÖÂ¡£
+  * @return ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½formcatÒ»ï¿½Â¡ï¿½
   */
  public static String getCurrentDateString(String dateFormat) {
   Calendar cal = Calendar.getInstance(TimeZone.getDefault());
@@ -802,7 +802,7 @@ public final class DateTools implements Serializable {
  }
 
 // /**
-//  * @deprecated ²»¹ÄÀøÊ¹ÓÃ¡£ ·µ»Øµ±Ç°Ê±¼ä´® ¸ñÊ½:yyMMddhhmmss,ÔÚÉÏ´«¸½¼þÊ±Ê¹ÓÃ
+//  * @deprecated ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã¡ï¿½ ï¿½ï¿½ï¿½Øµï¿½Ç°Ê±ï¿½ä´® ï¿½ï¿½Ê½:yyMMddhhmmss,ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ï¿½ï¿½Ê±Ê¹ï¿½ï¿½
 //  * 
 //  * @return String
 //  */
@@ -856,11 +856,11 @@ public final class DateTools implements Serializable {
 // }
 
  /**
-  * ¸ù¾Ý¸ø¶¨µÄ¸ñÊ½£¬·µ»ØÊ±¼ä×Ö·û´®¡£ ºÍgetFormatDate(String format)ÏàËÆ¡£
+  * ï¿½ï¿½ï¿½Ý¸ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½getFormatDate(String format)ï¿½ï¿½ï¿½Æ¡ï¿½
   * 
   * @param format
   *            yyyy MM dd hh mm ss
-  * @return ·µ»ØÒ»¸öÊ±¼ä×Ö·û´®
+  * @return ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½
   */
  public static String getCurTimeByFormat(String format) {
   Date newdate = new Date(System.currentTimeMillis());
@@ -869,13 +869,13 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * »ñÈ¡Á½¸öÊ±¼ä´®Ê±¼äµÄ²îÖµ£¬µ¥Î»ÎªÃë
+  * ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä´®Ê±ï¿½ï¿½Ä²ï¿½Öµï¿½ï¿½ï¿½ï¿½Î»Îªï¿½ï¿½
   * 
   * @param startTime
-  *            ¿ªÊ¼Ê±¼ä yyyy-MM-dd HH:mm:ss
+  *            ï¿½ï¿½Ê¼Ê±ï¿½ï¿½ yyyy-MM-dd HH:mm:ss
   * @param endTime
-  *            ½áÊøÊ±¼ä yyyy-MM-dd HH:mm:ss
-  * @return Á½¸öÊ±¼äµÄ²îÖµ(Ãë)
+  *            ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ yyyy-MM-dd HH:mm:ss
+  * @return ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ä²ï¿½Öµ(ï¿½ï¿½)
   */
  public static long getDiff(String startTime, String endTime) {
   long diff = 0;
@@ -892,38 +892,38 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * »ñÈ¡Ð¡Ê±/·ÖÖÓ/Ãë
+  * ï¿½ï¿½È¡Ð¡Ê±/ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½
   * 
   * @param second
-  *            Ãë
-  * @return °üº¬Ð¡Ê±¡¢·ÖÖÓ¡¢ÃëµÄÊ±¼ä×Ö·û´®£¬ÀýÈç3Ð¡Ê±23·ÖÖÓ13Ãë¡£
+  *            ï¿½ï¿½
+  * @return ï¿½ï¿½ï¿½ï¿½Ð¡Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½3Ð¡Ê±23ï¿½ï¿½ï¿½ï¿½13ï¿½ë¡£
   */
  public static String getHour(long second) {
   long hour = second / 60 / 60;
   long minute = (second - hour * 60 * 60) / 60;
   long sec = (second - hour * 60 * 60) - minute * 60;
 
-  return hour + "Ð¡Ê±" + minute + "·ÖÖÓ" + sec + "Ãë";
+  return hour + "Ð¡Ê±" + minute + "ï¿½ï¿½ï¿½ï¿½" + sec + "ï¿½ï¿½";
 
  }
 
  /**
-  * ·µ»ØÖ¸¶¨Ê±¼ä×Ö·û´®¡£
+  * ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½
   * <p>
-  * ¸ñÊ½£ºyyyy-MM-dd HH:mm:ss
+  * ï¿½ï¿½Ê½ï¿½ï¿½yyyy-MM-dd HH:mm:ss
   * 
-  * @return String Ö¸¶¨¸ñÊ½µÄÈÕÆÚ×Ö·û´®.
+  * @return String Ö¸ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½.
   */
  public static String getDateTime(long microsecond) {
   return getFormatDateTime(new Date(microsecond), "yyyy-MM-dd HH:mm:ss");
  }
 
  /**
-  * ·µ»Øµ±Ç°Ê±¼ä¼ÓÊµÊýÐ¡Ê±ºóµÄÈÕÆÚÊ±¼ä¡£
+  * ï¿½ï¿½ï¿½Øµï¿½Ç°Ê±ï¿½ï¿½ï¿½Êµï¿½ï¿½Ð¡Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä¡£
   * <p>
-  * ¸ñÊ½£ºyyyy-MM-dd HH:mm:ss
+  * ï¿½ï¿½Ê½ï¿½ï¿½yyyy-MM-dd HH:mm:ss
   * 
-  * @return Float ¼Ó¼¸ÊµÊýÐ¡Ê±.
+  * @return Float ï¿½Ó¼ï¿½Êµï¿½ï¿½Ð¡Ê±.
   */
  public static String getDateByAddFltHour(float flt) {
   int addMinute = (int) (flt * 60);
@@ -934,11 +934,11 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * ·µ»ØÖ¸¶¨Ê±¼ä¼ÓÖ¸¶¨Ð¡Ê±ÊýºóµÄÈÕÆÚÊ±¼ä¡£
+  * ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½Ð¡Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä¡£
   * <p>
-  * ¸ñÊ½£ºyyyy-MM-dd HH:mm:ss
+  * ï¿½ï¿½Ê½ï¿½ï¿½yyyy-MM-dd HH:mm:ss
   * 
-  * @return Ê±¼ä.
+  * @return Ê±ï¿½ï¿½.
   */
  public static String getDateByAddHour(String datetime, int minute) {
   String returnTime = null;
@@ -958,13 +958,13 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * »ñÈ¡Á½¸öÊ±¼ä´®Ê±¼äµÄ²îÖµ£¬µ¥Î»ÎªÐ¡Ê±
+  * ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä´®Ê±ï¿½ï¿½Ä²ï¿½Öµï¿½ï¿½ï¿½ï¿½Î»ÎªÐ¡Ê±
   * 
   * @param startTime
-  *            ¿ªÊ¼Ê±¼ä yyyy-MM-dd HH:mm:ss
+  *            ï¿½ï¿½Ê¼Ê±ï¿½ï¿½ yyyy-MM-dd HH:mm:ss
   * @param endTime
-  *            ½áÊøÊ±¼ä yyyy-MM-dd HH:mm:ss
-  * @return Á½¸öÊ±¼äµÄ²îÖµ(Ãë)
+  *            ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ yyyy-MM-dd HH:mm:ss
+  * @return ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ä²ï¿½Öµ(ï¿½ï¿½)
   */
  public static int getDiffHour(String startTime, String endTime) {
   long diff = 0;
@@ -981,17 +981,17 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * ·µ»ØÄê·ÝµÄÏÂÀ­¿ò¡£
+  * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * 
   * @param selectName
-  *            ÏÂÀ­¿òÃû³Æ
+  *            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * @param value
-  *            µ±Ç°ÏÂÀ­¿òµÄÖµ
+  *            ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
   * @param startYear
-  *            ¿ªÊ¼Äê·Ý
+  *            ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½
   * @param endYear
-  *            ½áÊøÄê·Ý
-  * @return Äê·ÝÏÂÀ­¿òµÄhtml
+  *            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  * @return ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½html
   */
  public static String getYearSelect(String selectName, String value,
    int startYear, int endYear) {
@@ -1016,18 +1016,18 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * ·µ»ØÄê·ÝµÄÏÂÀ­¿ò¡£
+  * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * 
   * @param selectName
-  *            ÏÂÀ­¿òÃû³Æ
+  *            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * @param value
-  *            µ±Ç°ÏÂÀ­¿òµÄÖµ
+  *            ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
   * @param startYear
-  *            ¿ªÊ¼Äê·Ý
+  *            ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½
   * @param endYear
-  *            ½áÊøÄê·Ý
-  *            ÀýÈç¿ªÊ¼Äê·ÝÎª2001½áÊøÄê·ÝÎª2005ÄÇÃ´ÏÂÀ­¿ò¾ÍÓÐÎå¸öÖµ¡££¨2001¡¢2002¡¢2003¡¢2004¡¢2005£©¡£
-  * @return ·µ»ØÄê·ÝµÄÏÂÀ­¿òµÄhtml¡£
+  *            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  *            ï¿½ï¿½ï¿½ç¿ªÊ¼ï¿½ï¿½ï¿½Îª2001ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª2005ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½2001ï¿½ï¿½2002ï¿½ï¿½2003ï¿½ï¿½2004ï¿½ï¿½2005ï¿½ï¿½ï¿½ï¿½
+  * @return ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½htmlï¿½ï¿½
   */
  public static String getYearSelect(String selectName, String value,
    int startYear, int endYear, boolean hasBlank) {
@@ -1055,20 +1055,20 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * ·µ»ØÄê·ÝµÄÏÂÀ­¿ò¡£
+  * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * 
   * @param selectName
-  *            ÏÂÀ­¿òÃû³Æ
+  *            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * @param value
-  *            µ±Ç°ÏÂÀ­¿òµÄÖµ
+  *            ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
   * @param startYear
-  *            ¿ªÊ¼Äê·Ý
+  *            ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½
   * @param endYear
-  *            ½áÊøÄê·Ý
+  *            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * @param js
-  *            ÕâÀïµÄjsÎªjs×Ö·û´®¡£ÀýÈç " onchange=\"changeYear()\" "
-  *            ,ÕâÑùÈÎºÎjsµÄ·½·¨¾Í¿ÉÒÔÔÚjspÒ³ÃæÖÐ±àÐ´£¬·½±ãÒýÈë¡£
-  * @return ·µ»ØÄê·ÝµÄÏÂÀ­¿ò¡£
+  *            ï¿½ï¿½ï¿½ï¿½ï¿½jsÎªjsï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " onchange=\"changeYear()\" "
+  *            ,ï¿½ï¿½ï¿½ï¿½ï¿½Îºï¿½jsï¿½Ä·ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ï¿½ï¿½jspÒ³ï¿½ï¿½ï¿½Ð±ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë¡£
+  * @return ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   */
  public static String getYearSelect(String selectName, String value,
    int startYear, int endYear, boolean hasBlank, String js) {
@@ -1097,20 +1097,20 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * ·µ»ØÄê·ÝµÄÏÂÀ­¿ò¡£
+  * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * 
   * @param selectName
-  *            ÏÂÀ­¿òÃû³Æ
+  *            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * @param value
-  *            µ±Ç°ÏÂÀ­¿òµÄÖµ
+  *            ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
   * @param startYear
-  *            ¿ªÊ¼Äê·Ý
+  *            ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½
   * @param endYear
-  *            ½áÊøÄê·Ý
+  *            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * @param js
-  *            ÕâÀïµÄjsÎªjs×Ö·û´®¡£ÀýÈç " onchange=\"changeYear()\" "
-  *            ,ÕâÑùÈÎºÎjsµÄ·½·¨¾Í¿ÉÒÔÔÚjspÒ³ÃæÖÐ±àÐ´£¬·½±ãÒýÈë¡£
-  * @return ·µ»ØÄê·ÝµÄÏÂÀ­¿ò¡£
+  *            ï¿½ï¿½ï¿½ï¿½ï¿½jsÎªjsï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " onchange=\"changeYear()\" "
+  *            ,ï¿½ï¿½ï¿½ï¿½ï¿½Îºï¿½jsï¿½Ä·ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ï¿½ï¿½jspÒ³ï¿½ï¿½ï¿½Ð±ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë¡£
+  * @return ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   */
  public static String getYearSelect(String selectName, String value,
    int startYear, int endYear, String js) {
@@ -1135,12 +1135,12 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * »ñÈ¡ÔÂ·ÝµÄÏÂÀ­¿ò
+  * ï¿½ï¿½È¡ï¿½Â·Ýµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * 
   * @param selectName
   * @param value
   * @param hasBlank
-  * @return ·µ»ØÔÂ·ÝµÄÏÂÀ­¿ò¡£
+  * @return ï¿½ï¿½ï¿½ï¿½ï¿½Â·Ýµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   */
  public static String getMonthSelect(String selectName, String value,
    boolean hasBlank) {
@@ -1162,13 +1162,13 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * »ñÈ¡ÔÂ·ÝµÄÏÂÀ­¿ò
+  * ï¿½ï¿½È¡ï¿½Â·Ýµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * 
   * @param selectName
   * @param value
   * @param hasBlank
   * @param js
-  * @return ·µ»ØÔÂ·ÝµÄÏÂÀ­¿ò¡£
+  * @return ï¿½ï¿½ï¿½ï¿½ï¿½Â·Ýµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   */
  public static String getMonthSelect(String selectName, String value,
    boolean hasBlank, String js) {
@@ -1190,12 +1190,12 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * »ñÈ¡ÌìµÄÏÂÀ­¿ò£¬Ä¬ÈÏµÄÎª1-31¡£ ×¢Òâ£º´Ë·½·¨²»ÄÜ¹»ºÍÔÂ·ÝÏÂÀ­¿ò½øÐÐÁª¶¯¡£
+  * ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½Ïµï¿½Îª1-31ï¿½ï¿½ ×¢ï¿½â£ºï¿½Ë·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü¹ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * 
   * @param selectName
   * @param value
   * @param hasBlank
-  * @return »ñµÃÌìµÄÏÂÀ­¿ò
+  * @return ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   */
  public static String getDaySelect(String selectName, String value,
    boolean hasBlank) {
@@ -1217,13 +1217,13 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * »ñÈ¡ÌìµÄÏÂÀ­¿ò£¬Ä¬ÈÏµÄÎª1-31
+  * ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½Ïµï¿½Îª1-31
   * 
   * @param selectName
   * @param value
   * @param hasBlank
   * @param js
-  * @return »ñÈ¡ÌìµÄÏÂÀ­¿ò
+  * @return ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   */
  public static String getDaySelect(String selectName, String value,
    boolean hasBlank, String js) {
@@ -1245,12 +1245,12 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * ¼ÆËãÁ½ÌìÖ®¼äÓÐ¶àÉÙ¸öÖÜÄ©£¨Õâ¸öÖÜÄ©£¬Ö¸ÐÇÆÚÁùºÍÐÇÆÚÌì£¬Ò»¸öÖÜÄ©·µ»Ø½á¹ûÎª2£¬Á½¸öÎª4£¬ÒÔ´ËÀàÍÆ¡££© £¨´Ë·½·¨Ä¿Ç°ÓÃÓÚÍ³¼ÆË¾»úÓÃ³µ¼ÇÂ¼¡££©
-  * ×¢Òâ¿ªÊ¼ÈÕÆÚºÍ½áÊøÈÕÆÚÒªÍ³Ò»ÆðÀ´¡£
+  * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ù¸ï¿½ï¿½ï¿½Ä©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä©ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ì£¬Ò»ï¿½ï¿½ï¿½ï¿½Ä©ï¿½ï¿½ï¿½Ø½ï¿½ï¿½Îª2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª4ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½Æ¡ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ë·ï¿½ï¿½ï¿½Ä¿Ç°ï¿½ï¿½ï¿½ï¿½Í³ï¿½ï¿½Ë¾ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½
+  * ×¢ï¿½â¿ªÊ¼ï¿½ï¿½ï¿½ÚºÍ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÒªÍ³Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * @param startDate
-  *            ¿ªÊ¼ÈÕÆÚ £¬¸ñÊ½"yyyy/MM/dd" »òÕß"yyyy-MM-dd"
+  *            ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ê½"yyyy/MM/dd" ï¿½ï¿½ï¿½ï¿½"yyyy-MM-dd"
   * @param endDate
-  *            ½áÊøÈÕÆÚ £¬¸ñÊ½"yyyy/MM/dd"»òÕß"yyyy-MM-dd"
+  *            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ê½"yyyy/MM/dd"ï¿½ï¿½ï¿½ï¿½"yyyy-MM-dd"
   * @return int
   */
  public static int countWeekend(String startDate, String endDate) {
@@ -1258,20 +1258,20 @@ public final class DateTools implements Serializable {
   Date sdate = null;
   Date edate = null;
   if(startDate.indexOf("/")>0&&endDate.indexOf("/")>0){
-   sdate = getDateObj(startDate, "/"); // ¿ªÊ¼ÈÕÆÚ
-   edate = getDateObj(endDate, "/");// ½áÊøÈÕÆÚ
+   sdate = getDateObj(startDate, "/"); // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½
+   edate = getDateObj(endDate, "/");// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   }
   if(startDate.indexOf("-")>0&&endDate.indexOf("-")>0){
-   sdate = getDateObj(startDate, "-"); // ¿ªÊ¼ÈÕÆÚ
-   edate = getDateObj(endDate, "-");// ½áÊøÈÕÆÚ
+   sdate = getDateObj(startDate, "-"); // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½
+   edate = getDateObj(endDate, "-");// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   }
   
-  // Ê×ÏÈ¼ÆËã³ö¶¼ÓÐÄÇÐ©ÈÕÆÚ£¬È»ºóÕÒ³öÐÇÆÚÁùÐÇÆÚÌìµÄÈÕÆÚ
+  // ï¿½ï¿½ï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð©ï¿½ï¿½ï¿½Ú£ï¿½È»ï¿½ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   int sumDays = Math.abs(getDiffDays(startDate, endDate));
   int dayOfWeek = 0;
   for (int i = 0; i <= sumDays; i++) {
-   dayOfWeek = getDayOfWeek(getDateAdd(sdate, i)); // ¼ÆËãÃ¿¹ýÒ»ÌìµÄÈÕÆÚ
-   if (dayOfWeek == 1 || dayOfWeek == 7) { // 1 ÐÇÆÚÌì 7ÐÇÆÚÁù
+   dayOfWeek = getDayOfWeek(getDateAdd(sdate, i)); // ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+   if (dayOfWeek == 1 || dayOfWeek == 7) { // 1 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 7ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     result++;
    }
   }
@@ -1279,13 +1279,13 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * ·µ»ØÁ½¸öÈÕÆÚÖ®¼äÏà²î¶àÉÙÌì¡£
-  * ×¢Òâ¿ªÊ¼ÈÕÆÚºÍ½áÊøÈÕÆÚÒªÍ³Ò»ÆðÀ´¡£
+  * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ì¡£
+  * ×¢ï¿½â¿ªÊ¼ï¿½ï¿½ï¿½ÚºÍ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÒªÍ³Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * @param startDate
-  *            ¸ñÊ½"yyyy/MM/dd" »òÕß"yyyy-MM-dd"
+  *            ï¿½ï¿½Ê½"yyyy/MM/dd" ï¿½ï¿½ï¿½ï¿½"yyyy-MM-dd"
   * @param endDate
-  *            ¸ñÊ½"yyyy/MM/dd" »òÕß"yyyy-MM-dd"
-  * @return ÕûÊý¡£
+  *            ï¿½ï¿½Ê½"yyyy/MM/dd" ï¿½ï¿½ï¿½ï¿½"yyyy-MM-dd"
+  * @return ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   */
  public static int getDiffDays(String startDate, String endDate) {
   long diff = 0;
@@ -1309,27 +1309,27 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * ·µ»ØÁ½¸öÈÕÆÚÖ®¼äµÄÏêÏ¸ÈÕÆÚÊý×é(°üÀ¨¿ªÊ¼ÈÕÆÚºÍ½áÊøÈÕÆÚ)¡£ ÀýÈç£º2007/07/01 µ½2007/07/03 ,ÄÇÃ´·µ»ØÊý×é
+  * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ÚºÍ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½ ï¿½ï¿½ï¿½ç£º2007/07/01 ï¿½ï¿½2007/07/03 ,ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * {"2007/07/01","2007/07/02","2007/07/03"}
-  * ×¢Òâ¿ªÊ¼ÈÕÆÚºÍ½áÊøÈÕÆÚÒªÍ³Ò»ÆðÀ´¡£
+  * ×¢ï¿½â¿ªÊ¼ï¿½ï¿½ï¿½ÚºÍ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÒªÍ³Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * @param startDate
-  *            ¸ñÊ½"yyyy/MM/dd"»òÕß yyyy-MM-dd
+  *            ï¿½ï¿½Ê½"yyyy/MM/dd"ï¿½ï¿½ï¿½ï¿½ yyyy-MM-dd
   * @param endDate
-  *            ¸ñÊ½"yyyy/MM/dd"»òÕß yyyy-MM-dd
-  * @return ·µ»ØÒ»¸ö×Ö·û´®Êý×é¶ÔÏó
+  *            ï¿½ï¿½Ê½"yyyy/MM/dd"ï¿½ï¿½ï¿½ï¿½ yyyy-MM-dd
+  * @return ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   */
  public static String[] getArrayDiffDays(String startDate, String endDate) {
-  int LEN = 0; // ÓÃÀ´¼ÆËãÁ½ÌìÖ®¼ä×Ü¹²ÓÐ¶àÉÙÌì
-  // Èç¹û½áÊøÈÕÆÚºÍ¿ªÊ¼ÈÕÆÚÏàÍ¬
+  int LEN = 0; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½Ü¹ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½
+  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÚºÍ¿ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¬
   if (startDate.equals(endDate)) {
    return new String[] { startDate };
   }
   Date sdate = null;
   if(startDate.indexOf("/")>0&&endDate.indexOf("/")>0){
-   sdate = getDateObj(startDate, "/"); // ¿ªÊ¼ÈÕÆÚ
+   sdate = getDateObj(startDate, "/"); // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½
   }
   if(startDate.indexOf("-")>0&&endDate.indexOf("-")>0){
-   sdate = getDateObj(startDate, "-"); // ¿ªÊ¼ÈÕÆÚ
+   sdate = getDateObj(startDate, "-"); // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½
   }
   
   LEN = getDiffDays(startDate, endDate);
@@ -1350,15 +1350,15 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * ÅÐ¶ÏÒ»¸öÈÕÆÚÊÇ·ñÔÚ¿ªÊ¼ÈÕÆÚºÍ½áÊøÈÕÆÚÖ®¼ä¡£
+  * ï¿½Ð¶ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Ú¿ï¿½Ê¼ï¿½ï¿½ï¿½ÚºÍ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ä¡£
   * 
   * @param srcDate
-  *            Ä¿±êÈÕÆÚ yyyy/MM/dd »òÕß yyyy-MM-dd
+  *            Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ yyyy/MM/dd ï¿½ï¿½ï¿½ï¿½ yyyy-MM-dd
   * @param startDate
-  *            ¿ªÊ¼ÈÕÆÚ yyyy/MM/dd »òÕß yyyy-MM-dd
+  *            ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ yyyy/MM/dd ï¿½ï¿½ï¿½ï¿½ yyyy-MM-dd
   * @param endDate
-  *            ½áÊøÈÕÆÚ yyyy/MM/dd »òÕß yyyy-MM-dd
-  * @return ´óÓÚµÈÓÚ¿ªÊ¼ÈÕÆÚÐ¡ÓÚµÈÓÚ½áÊøÈÕÆÚ£¬ÄÇÃ´·µ»Øtrue£¬·ñÔò·µ»Øfalse
+  *            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ yyyy/MM/dd ï¿½ï¿½ï¿½ï¿½ yyyy-MM-dd
+  * @return ï¿½ï¿½ï¿½Úµï¿½ï¿½Ú¿ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½Úµï¿½ï¿½Ú½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½trueï¿½ï¿½ï¿½ï¿½ï¿½ò·µ»ï¿½false
   */
  public static boolean isInStartEnd(String srcDate, String startDate,
    String endDate) {
@@ -1371,12 +1371,12 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * »ñÈ¡ÌìµÄÏÂÀ­¿ò£¬Ä¬ÈÏµÄÎª1-4¡£ ×¢Òâ£º´Ë·½·¨²»ÄÜ¹»ºÍÔÂ·ÝÏÂÀ­¿ò½øÐÐÁª¶¯¡£
+  * ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½Ïµï¿½Îª1-4ï¿½ï¿½ ×¢ï¿½â£ºï¿½Ë·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü¹ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   * 
   * @param selectName
   * @param value
   * @param hasBlank
-  * @return »ñµÃ¼¾¶ÈµÄÏÂÀ­¿ò
+  * @return ï¿½ï¿½Ã¼ï¿½ï¿½Èµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   */
  public static String getQuarterSelect(String selectName, String value,
    boolean hasBlank) {
@@ -1398,13 +1398,13 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * »ñÈ¡¼¾¶ÈµÄÏÂÀ­¿ò£¬Ä¬ÈÏµÄÎª1-4
+  * ï¿½ï¿½È¡ï¿½ï¿½ï¿½Èµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½Ïµï¿½Îª1-4
   * 
   * @param selectName
   * @param value
   * @param hasBlank
   * @param js
-  * @return »ñÈ¡¼¾¶ÈµÄÏÂÀ­¿ò
+  * @return ï¿½ï¿½È¡ï¿½ï¿½ï¿½Èµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   */
  public static String getQuarterSelect(String selectName, String value,
    boolean hasBlank, String js) {
@@ -1426,23 +1426,23 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * ½«¸ñÊ½Îªyyyy»òÕßyyyy.MM»òÕßyyyy.MM.ddµÄÈÕÆÚ×ª»»Îªyyyy/MM/ddµÄ¸ñÊ½¡£Î»Êý²»×ãµÄ£¬¶¼²¹01¡£<br>
-  * ÀýÈç.1999 = 1999/01/01 ÔÙÈç£º1989.02=1989/02/01
+  * ï¿½ï¿½ï¿½ï¿½Ê½Îªyyyyï¿½ï¿½ï¿½ï¿½yyyy.MMï¿½ï¿½ï¿½ï¿½yyyy.MM.ddï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½Îªyyyy/MM/ddï¿½Ä¸ï¿½Ê½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½01ï¿½ï¿½<br>
+  * ï¿½ï¿½ï¿½ï¿½.1999 = 1999/01/01 ï¿½ï¿½ï¿½ç£º1989.02=1989/02/01
   * 
   * @param argDate
-  *            ÐèÒª½øÐÐ×ª»»µÄÈÕÆÚ¡£¸ñÊ½¿ÉÄÜÎªyyyy»òÕßyyyy.MM»òÕßyyyy.MM.dd
-  * @return ·µ»Ø¸ñÊ½Îªyyyy/MM/ddµÄ×Ö·û´®
+  *            ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¡ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½Îªyyyyï¿½ï¿½ï¿½ï¿½yyyy.MMï¿½ï¿½ï¿½ï¿½yyyy.MM.dd
+  * @return ï¿½ï¿½ï¿½Ø¸ï¿½Ê½Îªyyyy/MM/ddï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½
   */
  public static String changeDate(String argDate) {
   if (argDate == null || argDate.trim().equals("")) {
    return "";
   }
   String result = "";
-  // Èç¹ûÊÇ¸ñÊ½Îªyyyy/MM/ddµÄ¾ÍÖ±½Ó·µ»Ø
+  // ï¿½ï¿½ï¿½ï¿½Ç¸ï¿½Ê½Îªyyyy/MM/ddï¿½Ä¾ï¿½Ö±ï¿½Ó·ï¿½ï¿½ï¿½
   if (argDate.length() == 10 && argDate.indexOf("/") > 0) {
    return argDate;
   }
-  String[] str = argDate.split("[.]"); // .±È½ÏÌØÊâ
+  String[] str = argDate.split("[.]"); // .ï¿½È½ï¿½ï¿½ï¿½ï¿½ï¿½
   int LEN = str.length;
   for (int i = 0; i < LEN; i++) {
    if (str[i].length() == 1) {
@@ -1466,12 +1466,12 @@ public final class DateTools implements Serializable {
  }
 
  /**
-  * ½«¸ñÊ½Îªyyyy»òÕßyyyy.MM»òÕßyyyy.MM.ddµÄÈÕÆÚ×ª»»Îªyyyy/MM/ddµÄ¸ñÊ½¡£Î»Êý²»×ãµÄ£¬¶¼²¹01¡£<br>
-  * ÀýÈç.1999 = 1999/01/01 ÔÙÈç£º1989.02=1989/02/01
+  * ï¿½ï¿½ï¿½ï¿½Ê½Îªyyyyï¿½ï¿½ï¿½ï¿½yyyy.MMï¿½ï¿½ï¿½ï¿½yyyy.MM.ddï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½Îªyyyy/MM/ddï¿½Ä¸ï¿½Ê½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½01ï¿½ï¿½<br>
+  * ï¿½ï¿½ï¿½ï¿½.1999 = 1999/01/01 ï¿½ï¿½ï¿½ç£º1989.02=1989/02/01
   * 
   * @param argDate
-  *            ÐèÒª½øÐÐ×ª»»µÄÈÕÆÚ¡£¸ñÊ½¿ÉÄÜÎªyyyy»òÕßyyyy.MM»òÕßyyyy.MM.dd
-  * @return ·µ»Ø¸ñÊ½Îªyyyy/MM/ddµÄ×Ö·û´®
+  *            ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¡ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½Îªyyyyï¿½ï¿½ï¿½ï¿½yyyy.MMï¿½ï¿½ï¿½ï¿½yyyy.MM.dd
+  * @return ï¿½ï¿½ï¿½Ø¸ï¿½Ê½Îªyyyy/MM/ddï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½
   */
  public static String changeDateWithSplit(String argDate,String split) {
   if (argDate == null || argDate.trim().equals("")) {
@@ -1481,15 +1481,15 @@ public final class DateTools implements Serializable {
    split="-";
   }  
   String result = "";
-  // Èç¹ûÊÇ¸ñÊ½Îªyyyy/MM/ddµÄ¾ÍÖ±½Ó·µ»Ø
+  // ï¿½ï¿½ï¿½ï¿½Ç¸ï¿½Ê½Îªyyyy/MM/ddï¿½Ä¾ï¿½Ö±ï¿½Ó·ï¿½ï¿½ï¿½
   if (argDate.length() == 10 && argDate.indexOf("/") > 0) {
    return argDate;
   }
-//   Èç¹ûÊÇ¸ñÊ½Îªyyyy-MM-ddµÄ¾ÍÖ±½Ó·µ»Ø
+//   ï¿½ï¿½ï¿½ï¿½Ç¸ï¿½Ê½Îªyyyy-MM-ddï¿½Ä¾ï¿½Ö±ï¿½Ó·ï¿½ï¿½ï¿½
   if (argDate.length() == 10 && argDate.indexOf("-") > 0) {
    return argDate;
   }  
-  String[] str = argDate.split("[.]"); // .±È½ÏÌØÊâ
+  String[] str = argDate.split("[.]"); // .ï¿½È½ï¿½ï¿½ï¿½ï¿½ï¿½
   int LEN = str.length;
   for (int i = 0; i < LEN; i++) {
    if (str[i].length() == 1) {
@@ -1513,9 +1513,9 @@ public final class DateTools implements Serializable {
  } 
  
  /**
-  * ·µ»ØÖ¸¶¨ÈÕÆÚµÄµÄÏÂÒ»¸öÔÂµÄÌìÊý¡£
-  * @param argDate ¸ñÊ½Îªyyyy-MM-dd»òÕßyyyy/MM/dd
-  * @return ÏÂÒ»¸öÔÂµÄÌìÊý¡£
+  * ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ÚµÄµï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  * @param argDate ï¿½ï¿½Ê½Îªyyyy-MM-ddï¿½ï¿½ï¿½ï¿½yyyy/MM/dd
+  * @return ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   */
  public static int getNextMonthDays(String argDate){
   String[] temp = null;
@@ -1530,12 +1530,12 @@ public final class DateTools implements Serializable {
   int curMonth = cal.get(Calendar.MONTH); 
   cal.set(Calendar.MONTH,curMonth+1);
   
-  int curyear = cal.get(Calendar.YEAR);// µ±Ç°Äê·Ý
-  curMonth = cal.get(Calendar.MONTH);// µ±Ç°ÔÂ·Ý,0-11
+  int curyear = cal.get(Calendar.YEAR);// ï¿½ï¿½Ç°ï¿½ï¿½ï¿½
+  curMonth = cal.get(Calendar.MONTH);// ï¿½ï¿½Ç°ï¿½Â·ï¿½,0-11
   
   int mArray[] = new int[] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30,
     31 };
-  // ÅÐ¶ÏÈòÄêµÄÇé¿ö £¬2ÔÂ·ÝÓÐ29Ìì£»
+  // ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½2ï¿½Â·ï¿½ï¿½ï¿½29ï¿½ì£»
   if ((curyear % 400 == 0)
     || ((curyear % 100 != 0) && (curyear % 4 == 0))) {
    mArray[1] = 29;
