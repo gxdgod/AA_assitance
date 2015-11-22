@@ -14,7 +14,7 @@ import mobidever.godutch.model.ModelUser;
 public class BusinessUser extends BusinessBase{
 
     private SQLiteDALUser mSQLiteDALUser;
-    protected BusinessUser(Context pContext) {
+    public BusinessUser(Context pContext) {
         super(pContext);
         mSQLiteDALUser = new SQLiteDALUser(pContext);
     }
@@ -40,6 +40,11 @@ public class BusinessUser extends BusinessBase{
         boolean _Result = mSQLiteDALUser.UpdateUser(_Condition, pModelUser);
 
         return _Result;
+    }
+
+    public List<ModelUser> GetNotHideUser()
+    {
+        return mSQLiteDALUser.GetUser("And State =1");
     }
 
    private List<ModelUser> GetUser(String pCondition)

@@ -17,6 +17,10 @@ public abstract  class AdapterBase extends BaseAdapter {
         return mList;
     }
 
+    public void SetList(List pList) {
+        this.mList = pList;
+    }
+
     public List mList;
 
     public Context GetContext() {
