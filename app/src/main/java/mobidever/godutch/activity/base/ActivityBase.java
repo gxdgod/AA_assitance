@@ -14,7 +14,7 @@ public class ActivityBase extends Activity {
             Toast.makeText(this,pMsg,Toast.LENGTH_LONG ).show();
         }
 
-        protected void OPenActivity(Class<?> pClass){
+        protected void OpenActivity(Class<?> pClass){
 
             Intent _Intent = new Intent();
             _Intent.setClass(this,pClass);

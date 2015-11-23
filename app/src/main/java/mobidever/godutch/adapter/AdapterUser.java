@@ -41,7 +41,7 @@ public class AdapterUser extends AdapterBase{
         if (convertView == null)
         {
 
-            convertView = GetLayeroutInflater().inflate(R.layout.slidemenu_list_item,null);
+            convertView = GetLayeroutInflater().inflate(R.layout.user_list_item,null);
 
             _Holder = new Holder();
             _Holder.ivUserIcon= (ImageView)convertView.findViewById(R.id.ivUserIcon);

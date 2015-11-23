@@ -3,6 +3,8 @@ package mobidever.godutch.activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -43,7 +45,20 @@ public class ActivityMain extends ActivityFrame implements SlideMenuView.OnSlide
 
     public  void InitListeners()
     {
+        gvAppGrid.setOnItemClickListener(new onAppGridItemClickListener());
+    }
 
+    private class onAppGridItemClickListener implements OnItemClickListener
+    {
+        @Override
+        public void onItemClick(AdapterView p_Apater, View view, int mPosition, long id) {
+            String _MenuName = (String)p_Apater.getAdapter().getItem(mPosition);
+            if (_MenuName.equals(getString(R.string.appGridTextUserManage)))
+            {
+                OpenActivity(ActivityUser.class);
+                return;
+            }
+        }
     }
 
     public  void BindData()

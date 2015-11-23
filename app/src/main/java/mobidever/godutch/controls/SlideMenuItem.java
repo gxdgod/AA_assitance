@@ -30,7 +30,4 @@ public class SlideMenuItem {
         return mItemID;
     }
 
-
-
-
 }

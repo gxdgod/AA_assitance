@@ -4,27 +4,31 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+
+import mobidever.godutch.utility.Reflection;
 
 /**
  * Created by leon on 15-11-8.
  */
 public class SQLiteHelper extends SQLiteOpenHelper {
 
-    private  static SQLiteDateBaseConfig mSQLiteDateBaseConfig;
+    private  static SQLiteDateBaseConfig SQLITE_DATABASE_CONFIG;
     private  Context mContext;
     private static  SQLiteHelper INSTANCE;
+    private Reflection mReflection ;
+
 
     public interface SQLiteDataTable
     {
         public void OnCreate(SQLiteDatabase pDataBase);
         public void OnUpgrade(SQLiteDatabase pDataBase);
-
-
     }
+
     public  SQLiteHelper(Context pContext)
     {
-        super(pContext,mSQLiteDateBaseConfig.GetDataBaseName(),null,mSQLiteDateBaseConfig.GetVersion());
+        super(pContext, SQLITE_DATABASE_CONFIG.GetDataBaseName(), null, SQLITE_DATABASE_CONFIG.GetVersion());
         mContext=pContext;
     }
 
@@ -32,7 +36,9 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     {
         if (INSTANCE == null)
         {
+            SQLITE_DATABASE_CONFIG =SQLiteDateBaseConfig.GetInstance(pContext);
             INSTANCE = new SQLiteHelper(pContext);
+
         }
         return INSTANCE;
 
@@ -43,10 +49,19 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db) {
-        ArrayList<String> _ArrayList = mSQLiteDateBaseConfig.GetTables();
-        _ArrayList.add("");
-
+    public void onCreate(SQLiteDatabase pDataBase) {
+        ArrayList<String> _ArrayList = SQLITE_DATABASE_CONFIG.GetTables();
+        Reflection mReflection = new Reflection();
+        for (int i=0; i < _ArrayList.size(); i++) {
+            try {
+                SQLiteDataTable _SQLiteDataTable = (SQLiteDataTable) mReflection.newInstance(_ArrayList.get(i),
+                        new Object[]{mContext},
+                        new Class[]{Context.class});
+                 _SQLiteDataTable.OnCreate(pDataBase);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
@@ -54,7 +69,41 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     }
 
-    public static SQLiteOpenHelper GetInstance(Context m_context) {
-        return null;
+
+
+    public static SQLiteOpenHelper GetInstance(Context pContext) {
+        if (INSTANCE == null)
+        {
+            SQLITE_DATABASE_CONFIG = SQLiteDateBaseConfig.GetInstance(pContext);
+            INSTANCE = new SQLiteHelper(pContext) ;
+
+        }
+        return INSTANCE;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
